@@ -1,0 +1,56 @@
+@font-face {
+  font-family: heading;
+  src: url(fonts/Slabo13px-Regular.ttf);
+}
+body {
+  
+}
+.fonts{
+  font-family: heading;
+
+}
+#sub{
+  text-align: start;
+}
+.btn {
+  letter-spacing: 1px;
+}
+.pricing {
+  cursor: pointer;
+}
+.border-bottom {
+  border-bottom: 3px solid #c4c4c4 !important;
+}
+.submit-request {
+  background-color: #39b587 !important;
+  cursor: pointer;
+}
+.form {
+  background-color: #f0f0f0;
+  padding: 28px;
+  border-radius: 12px;
+}
+.form-control {
+  margin-bottom: 12px;
+}
+.backgroundcolor {
+  color: #1c1c1cd2;
+}
+.img-1 {
+  border-radius: 10px;
+  user-select: none;
+}
+
+@media screen and (min-width: 570px) and (max-width: 1400px) {
+  .content-of-form {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+}
+.content-of-form {
+  margin-bottom: 50px !important;
+}
+
+.form-out-side {
+  padding: 10px !important;
+}

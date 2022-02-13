@@ -1,0 +1,432 @@
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Light.ttf);
+  }
+
+
+.calcontainer{
+ border:1px solid lightgray;
+ border-radius: 20px;
+ padding: 20px;
+ box-shadow: 1px 1px 15px 3px #cbcbcb;
+ background: rgb(251, 254, 255);
+}
+p{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+#flexCheckChecked{
+    font-size: 30px !important;
+   
+}
+.attendenumber{
+    margin-left: 2px;
+    margin-top: 3px;
+}
+
+.form-check-input{
+    margin-left: 25px;
+}
+
+#plantype{
+    font-family:Roboto !important;
+font-style: normal;
+font-weight: 300;
+font-size: 60px;
+    text-align: center;
+
+    
+
+}
+h6{
+    color: #071BC5;
+    font-family:Arial, Helvetica, sans-serif !important;
+}
+input{
+    font-family:Arial, Helvetica, sans-serif !important;
+}
+.inputbox{
+    width: max-content !important;
+}
+.form-label{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+}
+#three{
+    font-size: 30px !important;
+}
+.whitelabelcheck{
+    margin-top: 35px !important;
+}
+.total{  
+    text-align: center;
+    background: #071BC5;
+    padding: 10px;
+border-radius: 14px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 58px;
+color: white;
+    
+ }
+ #message{
+    font-size: 32px;
+    font-weight: 300 !important;
+ }
+ .totalcontainer{
+     text-align: center;
+ }
+.step{
+    padding: 20px;
+}
+.fheading{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500 !important;
+font-size: 33px;
+text-align: center;
+}
+h3{
+    text-align: start;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 33px;
+color: rgb(30, 30, 30);
+border-bottom: 2px solid #C4C4C4;;
+}
+h5{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 700 !important;
+font-size: 17px;
+}
+.form-range{
+    outline: none !important;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+
+	background-color: #98A3FF;;
+	height: 8px !important;
+
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+   
+	background-color: #071BC5;;
+
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+	
+}
+
+.value{
+    border-radius: 5px;
+    padding: 3px;
+    border:1px solid blue ;
+    
+}
+
+.zero{
+    text-align: end;
+}
+
+
+.bi-info-circle-fill{
+    color: rgb(0, 76, 255) !important;
+    font-size: 16px !important;
+    
+}
+
+.quest{
+    position: fixed;
+    bottom: 3%;
+   left: 94%;
+   cursor: pointer;
+}
+
+
+#plancont{
+    width: fit-content;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+#plan{
+    margin-right: 15px;
+}
+#medium{
+    display: none;
+}
+#small{
+    display: none;
+}
+#custom{
+    display: none;
+}
+.infotag{
+    position: absolute;
+    bottom: 0%;
+}
+.back{
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(39, 39, 39) !important;
+    margin-left: 30px;
+}
+.poper{
+    border: none;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.tippy{
+    font-size: 12px !important;
+}
+@font-face {
+    font-family: heading;
+    src: url(fonts/Slabo13px-Regular.ttf);
+  }
+  
+.calheading{
+    background:rgba(196, 196, 196, 1);
+}
+#font{
+    font-family:  heading;
+    color: white;
+font-style: normal;
+font-weight: normal;
+font-size: 50px;
+}
+.imgcont{
+   
+}
+.calimage{
+    width: 130%;
+}
+@media  screen and  ( max-width:800px){
+    .calimage{
+        width: 300px;
+    }
+}
+
+/* <div className="  row step ">   <pre></pre>
+                <h3>Step 5 : Select your Service</h3>
+                <pre></pre>   <pre></pre>
+                   <div className='col-3'><img src={dedciated} height='100px' width='200px' ></img></div>
+                   <div className='col-8'>
+                       <h5>Dedicated Event Expert</h5>
+                       <p>
+                       Your dedicated event manager is with you every step of the way, working closely on the communication, logistics, set-up and matchmaking data with you.
+                       </p>
+                       
+                   </div>
+                  <div className='col-1'><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" ></input>
+ 
+ </div>
+                  
+                   
+                    </div>
+
+
+
+
+
+
+                    <div className="  row step ">
+               
+               <pre></pre>
+                  <div className='col-3'><img src={onsite} height='100px' width='200px' ></img></div>
+                  <div className='col-8'>
+                      <h5>Onsite Support</h5>
+                      <p>
+                      A Swapcard networking expert will support your event online or onsite to provide assistance to attendees and training to exhibitors.
+                      </p>
+                      
+                  </div>
+                 <div className='col-1'><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" ></input>
+
+</div>
+                 
+                  
+                   </div>*/
+                   /*  <div className="  row step ">
+                        
+                        <p>Define the volume of attendees per month for all your events <a title='Every additional 1-25 users $20 wil be charged,Depeding on your plan certain
+                 no of attendes are for free eg- For Small upto 200 attendes per month are free  '><i class="bi bi-info-circle-fill"></i></a> </p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range" min="200" max="10000" step="25" value={attend} onkeydown="return false" onChange={attendenumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>10000</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value' id='attend'  type='number'min="200" max="10000" step="25" value={attend} onkeydown="return false" onChange={attendenumber} ></input><pre></pre>
+                    <h6>Cost: ${attendcost}</h6></div>
+                         </div>
+                 
+                <div className="row step  ">
+                <pre></pre> <pre></pre>
+                <h5>Exhibitors Volume </h5>
+                <div className='col-12'>
+                 
+                 <p>Extra Booth($100/booth) <a title='Depending on your plan you will be charged ,if you purchase more booths'><i class="bi bi-info-circle-fill"></i></a></p>
+                   <div className='row'>
+                  
+                    <div className='col-1  zero'>3</div>
+                    <div className='col-5'><input type="range" min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>100</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input id='exhibitor'  type='number' className='value'  min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber} ></input><pre></pre>
+                    <h6>Cost: ${exhibitorcost}</h6>
+                </div>
+                   <pre></pre>
+                    
+                    <p>Buy Custom Hall Template ($100/hall) <a title='Depending on your plan you will be charged ,
+                    if you want extra Halls'><i class="bi bi-info-circle-fill"></i></a> </p>
+                    <span className='col-1 zero'>2</span>
+                    <div className='col-5'><input type="range" value={customhall} min="2" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input id='customhall'  type='number' className='value' min="2" max="50" step="1" value={customhall}  onChange={customhallnumber} ></input><pre></pre>
+                    <h6>Cost: ${customhallcost}</h6>
+                    </div>
+
+                    <pre></pre>
+                    
+                    <p>Buy Custom Booth Template ($100/template) <a title='Select no of custom booths'><i class="bi bi-info-circle-fill"></i></a> </p>
+                    <span className='col-1 zero'>1</span>
+                    <div className='col-5'><input type="range" min="1" max="50" step="1" value={custombooth} onChange={customboothnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number'  value={custombooth} min="1" max="50" step="1" onChange={customboothnumber}   ></input><pre></pre>
+                    <h6>Cost: ${customboothcost}</h6>
+                    </div>
+                        
+                        </div>
+                       
+                </div>
+               
+                
+                </div>
+
+                <div className="row step "><pre></pre>
+                <h3>Step 4 : Select your Module</h3>
+                <pre></pre><pre></pre>
+                   <div className='col-3'><img src={whitelabel} height='100px' width='200px' ></img></div>
+                   <div className='col-7   '>
+                       <h5>White Label ($250/event) <a title='Depending on no of events white label will be charged'><i class="bi bi-info-circle-fill"></i></a></h5>
+                       <p>
+                       Showcase your brand! Create a white-label platform using your brand name, font, colours etc for an exclusive experience.
+                       </p>
+                       
+                   </div>
+                  <div className='col-2'><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" onChange={whitelabelnumber}></input><pre></pre>  <h6>Cost: ${ whitelabelcost}</h6>
+ 
+ </div>
+                  
+                   
+                    </div>
+
+                    <div className="  row step ">
+                        <h3> Step 5: Landing/Event Microsite</h3><pre></pre><pre></pre>
+                        <p>Buy Custom Landing Template ($200/template) <a title='You will be charged $200 per template '><i class="bi bi-info-circle-fill"></i></a> </p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range" value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number' value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber} ></input><pre></pre>
+                    <h6>Cost: ${customlandingcost}</h6></div>
+                         </div>
+
+                         <div className="  row step ">
+                        <h3>Step 6: 3D and 360° Walkthrus  </h3>
+                        
+                        <div className='col-4'><p>Branded Lobby Walkthrough ($300/event) <a title='Depending on no of events 3D and 360° Walkthrus will be charged Max to 3 doors'><i class="bi bi-info-circle-fill"></i></a> </p></div>
+                    <div className='col-4'></div>
+                
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked  " id="three" onChange={setthreenumber}></input><pre></pre>
+                    <h6>Cost: ${threecost}</h6></div>
+                         </div>
+
+
+
+                         <div className="  row step ">
+                        <h3>Step 7: Lobby</h3><pre></pre>
+                        <p>Buy Custom Lobby Template ($200/template) <a title='You will be charged $200 per template '><i class="bi bi-info-circle-fill"></i></a>  </p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range" value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number' value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  ></input><pre></pre>
+                    <h6>Cost: ${customlobbycost}</h6></div>
+                         </div>
+
+
+                         <div className="  row step ">
+                        <h3>Step 8: Auditorium </h3><pre></pre>
+                        <p>Buy Custom Auditorium Template ($200/template) <a title='You will be charged $200 per template '><i class="bi bi-info-circle-fill"></i></a></p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range"   value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number' value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber} ></input><pre></pre>
+                    <h6>Cost: ${auditoriumcost}</h6></div>
+                         </div>
+
+
+                         <div className="  row step ">
+                        <h3>Step 9: Engagement </h3>
+                        <p>Games with Leaderboard ($50/game) <a title='Depending on your plan you will be charged for extra games'><i class="bi bi-info-circle-fill"></i></a> </p>
+                        
+                        <span className='col-1 zero'>1</span>
+                    <div className='col-5'><input type="range" value={games } min="1" max="50" step="1" onChange={gamesnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number' value={games } min="1" max="50" step="1" onChange={gamesnumber} ></input><pre></pre>
+                    <h6>Cost: ${gamescost}</h6></div>
+
+ 
+               <p>Photo Booth ($100/month) <a title='You will be charged $100 per month '><i class="bi bi-info-circle-fill"></i></a> </p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range" value={booth} min="0" max="10" step="1" onChange={boothnumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>10</span>
+                   <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value'  type='number' value={booth} min="0" max="10" step="1" onChange={boothnumber}  ></input><pre></pre>
+                    <h6>Cost: ${boothcost}</h6></div>
+
+                         </div>
+
+
+                         <div className="  row step ">
+                        <h3>Step 10: Support </h3>
+                        <p>Onboarding Executive (Tech support $75/hour) <a title='Tech Support, 1st Event Free Tech Support 
+Post 1st Event - Per hr $ 75'><i class="bi bi-info-circle-fill"></i></a>  </p>
+                    <span className='col-1 zero'>0</span>
+                    <div className='col-5'><input type="range" value={hour} min="0" max="50" step="1" onChange={hournumber}  class="form-range  " id="customRange1"/></div>
+                    <span className='col-1'>50 hours</span>
+                    <div className='col-2'></div>
+                    <div className='col-2'>
+                    <input className='value' type='number' value={hour}min="0" max="50" step="1" onChange={hournumber}  ></input><pre></pre>
+                    <h6>Cost: ${hourcost}</h6></div>
+                         </div>
+
+                    
+               
+               
+                         <h2><pre></pre>Total:-${total} </h2>*/

@@ -1,0 +1,22 @@
+
+/*
+import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from "react-dom";
+import Calculator from './components/calculator';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+
+
+<Routes>
+      <Route path="/" element={<App />} />
+      <Route path="calculator" element={<Calculator />} />
+     
+    </Routes>
+
+
+     <Link className="btn btn2 btn-outline-primary" to="/calculator">Calculator</Link>
+*/

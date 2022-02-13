@@ -1,0 +1,105 @@
+.features{
+    text-align: center;
+    background-color: #b9ffe5;
+    border-right: 1px solid white;
+
+font-size: 11px;
+}
+
+.total2{
+    font-size: 17px;
+    color: rgb(0, 60, 255);
+    font-weight: 700;
+}
+
+.head{text-align: center;
+    color: black !important;
+}
+.lastline{
+    font-size: 10px;
+}
+.logo{
+    text-align: start;
+    margin:10px;
+}
+.words{
+    font-size: 13px !important;
+}
+#qotform{
+    display: none;
+}
+.top{
+    text-align: center;
+  
+    padding: 5px;
+    background-color: #39B587;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.row{
+    
+    margin-bottom: 3px;
+}
+.adress{
+    margin-left: 10px;
+    font-size: 12px;
+}
+#qotation{
+
+display: none;
+}
+.qotationbutton{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #FF910F;
+    background: #FFFFFF;
+border: 3px solid #FF910F;
+box-sizing: border-box;
+border-radius: 12px;
+padding: 10px;
+
+}
+.qotationbuttonmini{
+    opacity: 0.5;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    color: #FF910F;
+    background: #FFFFFF;
+border: 3px solid #FF910F;
+box-sizing: border-box;
+border-radius: 8px;
+padding: 5px;
+background-color: orangered;
+    color: white;
+}
+.qotationbuttonmini:hover{
+    
+}
+.qotationbutton:hover{
+    background-color: orangered;
+    color: white;
+}
+#spiner{
+    text-align: center;
+    display: none;
+}
+.bf{
+    text-align: end;
+    padding-top: 20px;
+}
+#qotform{
+    box-shadow: 1px 1px 15px 3px #e7e7e7;
+    padding: 20px;
+    border-radius: 10px;
+}
+@media screen and (max-width:800px){
+    .qotationbutton{
+        display: none;
+    }
+}

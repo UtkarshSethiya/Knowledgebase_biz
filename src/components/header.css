@@ -1,0 +1,119 @@
+
+
+.fontAwesome{ font-family: 'Helvetica', FontAwesome, sans-serif; 
+  border: 2px solid rgba(255, 172, 12, 1);
+}
+
+@font-face {
+  font-family: heading;
+  src: url(fonts/Slabo13px-Regular.ttf);
+}
+.main{
+   
+  background: #39B587;
+
+}
+.rightbuttons{
+  display: flex;
+}
+#heading{
+  color: white;
+  font-family: heading;
+  
+  font-weight: 500;
+}
+#help{ font-family: heading;
+  font-weight: 400 !important;
+  color: black !important;
+}
+.topbuttons{
+  background: #86ECC6 !important;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+border-radius: 6px !important;
+font-weight: 700 !important;
+}
+
+.home{
+  color: rgb(10, 10, 10) !important;
+}
+.home:hover{
+  color: rgb(4, 104, 198) !important;
+}
+input{
+  padding: 10px;
+  border: 1px solid rgb(70, 130, 194);
+ width: 100%;
+  font-size: 20px;
+ border-radius: 25px;
+outline:  rgb(70, 130, 194);
+
+}
+.logo{
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.navbar{
+ 
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.bi-cash-coin{
+  font-size: 16px !important;
+}
+.bi-calculator-fill{
+  font-size: 16px !important; 
+}
+
+.btn1{
+  background: #FF910F !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 6px !important;
+  padding: 8px;
+  font-weight: 700 !important;
+  border:none;
+}
+
+.searchbox{
+  text-align: center;
+}
+
+.subscribe{
+
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+  display: flex;
+  justify-content: space-around;
+}
+h2{
+  font-weight: 600;
+  color: rgb(255, 255, 255) !important;
+}
+.faq{
+  text-align: center;
+  color: white !important;
+ 
+}
+.expolretopicsrow{
+  border-bottom: 2px solid #39B587;
+}
+
+.subscribe{
+  margin-right: 20px !important;
+}
+@media  screen and  ( max-width:1200px) {
+
+  .btn1{
+    display: none;
+  }
+  .btn2{
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .navbar-brand{
+    font-size: 10px;
+  }
+  
+}

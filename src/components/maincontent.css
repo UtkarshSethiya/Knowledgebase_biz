@@ -1,0 +1,85 @@
+.cont_container{
+   padding-top: 5px;
+   padding-right: 5px;
+    border-radius: 10px;
+    border: 1px solid #39B587;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+   
+  }
+  
+  .cont_container:hover{
+    transform: scale(1.05);
+    transition-duration: .5s;
+    box-shadow: 1px 1px 15px 3px #cbcbcb;
+  }
+  @font-face {
+    font-family: heading;
+    src: url(fonts/Slabo13px-Regular.ttf);
+  }
+  
+  .writebutton{
+    background: #39B587;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 6px;
+font-size: 25px;
+border: none;
+padding:8px;
+color: white;
+text-decoration: none;
+  }
+  .sidecontent{
+    text-align: center;
+  }
+  .fg{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  }
+ .bi-person-fill{
+    font-size: 15px !important;
+  }
+  .bi-book{
+    font-size: 55px !important;
+    color: gray !important;
+ 
+  }
+  .book{
+    text-align: end !important;
+ 
+  }
+
+  .topics{
+    font-family: heading;
+    font-style: normal;
+font-weight: normal;
+font-size: 35px;
+  }
+  .descp{
+    padding-top: 10px;
+  }
+  .explore{
+    border-right: 1px solid #000000;
+  }
+  .contactcontainer{
+    box-shadow: 1px 1px 15px 3px #cbcbcb;
+   padding-top: 40px;
+  padding-bottom: 40px;
+    border-radius: 10px;
+    
+  }
+  .contheading{
+    font-family: heading;
+    font-style: normal;
+font-weight: normal;
+font-size: 18px;
+  }
+  .contdetails{
+    font-size: 13px;
+  }
+  @media screen and (max-width:777px){
+    .book{
+      text-align: start !important;
+    }
+  }

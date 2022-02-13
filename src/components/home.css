@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    font-size: 33px;
+    font-weight: 700;
+  }
+  
+  
+  #biz{
+    color: orangered;
+  }
+  #connect{
+    color:#293a53;
+  }
+  
+  .btnhelp{
+    background-color: orangered;
+    color: white;
+    font-weight: 700;
+    border-radius: 55px;
+    padding: 10px;
+    border:none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .help{
+    position: fixed;
+    bottom: 5%;
+    right: 1%;
+   z-index: 1;
+  
+  }
+  
