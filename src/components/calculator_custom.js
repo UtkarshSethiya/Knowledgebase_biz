@@ -370,7 +370,7 @@ today = dd + '/' + mm + '/' + yyyy;
                     <pre></pre>
                       
                        <div className='col   '><pre></pre><pre></pre>
-                           <h5 >White Label ($250/event) <Tippy className='tippy' content="Depending on no of events white label will be charged"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+                           <h5 >White Label ($250/event) <Tippy className='tippy' content="This is the cost for 1 event.For more and yearly subscription please talk to us"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                            <p>
                            Showcase your brand! Create a white-label platform using your brand name, font, colours etc for an exclusive experience.
                            </p>
