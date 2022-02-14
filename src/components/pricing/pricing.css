@@ -32,8 +32,9 @@ body {
   letter-spacing: 1px;
 }
 .pricing {
+  font-family: heading;
   cursor: pointer;
-  background-color: #39b587 !important;
+  background-color: rgb(193, 193, 193) !important;
 }
 .card {
   background-color: #ddffef !important;

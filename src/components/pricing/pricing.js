@@ -41,7 +41,7 @@ function Pricing(){
   </div>
         
         <div>
-        <h1 class="bg-success text-white py-3 text-center py-lg-5 pricing">
+        <h1 class="text-white py-3 text-center py-lg-5 pricing">
         PRICING
       </h1>
         <div className="text-center p-lg-5 p-4">
