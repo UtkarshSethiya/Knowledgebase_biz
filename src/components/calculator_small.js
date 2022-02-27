@@ -1,7 +1,7 @@
 
 import './calculator.css';
 
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { Link } from "react-router-dom";
 import quest from './images/quest.png';
 import logo from './images/logo.png';
@@ -25,6 +25,71 @@ function Small(){
     const[booth,setbooth]=useState(0);
     const[hour,sethour]=useState(0);
     
+
+function previousfunction(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+ 
+  let step3= document.getElementById('step3');  
+  let step4= document.getElementById('step4');  
+  let step8= document.getElementById('step8');  
+  let stepquotation= document.getElementById('stepquotation');  
+
+   if(step4.style.display!='none'){
+    step3.style.display='block';
+    step4.style.display='none';
+    step8.style.display='none';
+    document.getElementById('previous').style.visibility='hidden';
+  }
+  else if(step8.style.display!='none'){
+    step3.style.display='none';
+    step4.style.display='block';
+    step8.style.display='none';
+    stepquotation.style.display='none';
+  }
+  else if(stepquotation.style.display!='none'){
+    step3.style.display='none';
+    step4.style.display='none';
+    step8.style.display='block';
+    stepquotation.style.display='none';
+    document.getElementById('next').style.display='block'
+  }
+}
+
+
+    function nextfunction(){
+  
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+
+    let step3= document.getElementById('step3');  
+    let step4= document.getElementById('step4');  
+    let step8= document.getElementById('step8');  
+    let stepquotation= document.getElementById('stepquotation');  
+    if(step3.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='block';
+      document.getElementById('previous').style.visibility='visible';
+
+    }
+    else if(step4.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='none';
+      step8.style.display='block';
+   
+      
+    }
+    else if(step8.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='none';
+      step8.style.display='none';
+      stepquotation.style.display='block';
+      document.getElementById('next').style.display='none'
+    }
+    
+  
+    }
+    
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -32,8 +97,6 @@ function Small(){
     
     today = dd + '/' + mm + '/' + yyyy;
      
-    
-    
     
 
     function eventnumber(event){
@@ -270,6 +333,9 @@ function checkname(event){
     var converter = require('number-to-words');
 
     
+
+
+    
     
     /*let total=( parseInt((attend-200)/25)*20) + parseInt((exhibitor-3)*100)+ parseInt((customhall)*100) + parseInt((custombooth)*100)+  parseInt(whitelabel )+ parseInt((customlanding)*200)+ parseInt(three)+ parseInt((customlobby)*200)+parseInt((auditorium)*200)+ parseInt((games-1)*50)+ parseInt(booth*100)+  parseInt((hour)*75);*/
     let total=700+attendcost+exhibitorcost +customhallcost+customboothcost+whitelabelcost+customlandingcost+threecost+customlobbycost+auditoriumcost+gamescost+boothcost+hourcost;   
@@ -285,7 +351,6 @@ function checkname(event){
            
             <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link>
     
-                
                
                 <div className="col-md-1"></div>
                 
@@ -299,6 +364,7 @@ function checkname(event){
                 <div className="col-md-10 ">
                 
                 <p id='plantype'>Small Plan</p>
+                <div id='step3'>
                     <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
                     <div className='row  step'>
                 <div className="col-md-7   ">
@@ -373,7 +439,8 @@ function checkname(event){
                     </div>
                     
                     </div>
-    
+                    </div>
+                    <div id='step4'>
                     <div className="row step "><pre></pre>
                     <h3 className='fheading'>Step 4 : Select your Module <pre></pre></h3>
                     <pre></pre>
@@ -433,8 +500,9 @@ function checkname(event){
                         <input className='value inputbox'  type='number' value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  ></input><pre></pre>
                         <h6>Cost: ${customlobbycost}</h6></div>
                              </div></div></div>
-    
-    
+                             </div>
+                            
+                           <div id='step8'>
                              <div className="  row step ">
                             <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3><pre></pre><pre></pre>
                             <div className='col-md-7'><pre></pre>
@@ -493,10 +561,11 @@ function checkname(event){
                         <input className='value inputbox' type='number' value={hour}min="0" max="50" step="1" onChange={hournumber}  ></input><pre></pre>
                         <h6>Cost: ${hourcost}</h6></div></div>
                              </div></div>
-    
+                         
                              <pre></pre> <pre></pre> 
+                             </div>
                    
-                   
+                   <div id='stepquotation' className='border' >
                             <div className='totalcontainer'> <span className='total'>Total: ${total} </span><pre></pre>
                              <h5 id='message'>Great,You are eligible for Small Plan!</h5>
                             <pre></pre>
@@ -505,96 +574,98 @@ function checkname(event){
   <span class="visually-hidden">Loading...</span>
 </div>
                 </div></div>
+                <div className='d-flex navigation_buttons'><button id='previous' onClick={previousfunction}>Previous</button> <button id='next' onClick={nextfunction}>Next</button></div>
+               
                 <pre></pre> <pre></pre> <pre></pre>
                 
                  
-                <div id='qotation' className='row  invoice2 '>
+                <div id='qotation' className='row   invoice2 '>
                    
-                   <div className='row '>
-                       <div className='col-2 '><img className='logo'  src={logo} height='80px' ></img>
+                   <div className=' topsection '>
+                       <div className=' '><img className='logo'  src={logo} height='80px' ></img>
                        
                         <p className='adress'>  To : {fullname}<br></br>{mail} <br></br>   {gst}</p></div>
-                       <div className='col-4 bf'>  <p> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> </p> </div>
+                       <div className=''>  <p> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> </p> </div>
                         
                       
                         </div>
                   
                  <div className='col-1'></div>
-                 <div className='col-7  ' >
+                 <div className='col-12  ' >
                   <div className='row '>
-                     <div className='col-4  top '>Features</div>
-                     <div className='col-3  top ' >Quantity</div>
-                     <div className='col-3  top '>Cost</div>
+                     <div className='col  top '>Features</div>
+                     <div className='col  top ' >Quantity</div>
+                     <div className='col  top '>Cost</div>
                   </div>
                   <div className='row'>
-                       <div className='col-4   features'>Plan Cost </div>
-                       <div className='col-3 features' >Type:Small</div>
-                       <div className='col-3 features '>$ 700</div>
+                       <div className='col firstheading  features text-start '>Plan Cost </div>
+                       <div className='col features' >Type:Small</div>
+                       <div className='col features '>$ 700</div>
                     </div>
                   <div className='row'>
-                     <div className='col-4 features'>Attendees Volume</div>
-                     <div className='col-3 features' >{attend}</div>
-                     <div className='col-3 features '>${attendcost}</div>
+                     <div className='col firstheading features text-start '>Attendees Volume</div>
+                     <div className='col features' >{attend}</div>
+                     <div className='col features '>${attendcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>Extra Booth</div>
-                     <div className='col-3 features' >{exhibitor}</div>
-                     <div className='col-3 features'>${exhibitorcost}</div>
+                     <div className='col firstheading features text-start '>Extra Booth</div>
+                     <div className='col features' >{exhibitor}</div>
+                     <div className='col features'>${exhibitorcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>Custom Hall Template </div>
-                     <div className='col-3 features' >{customhall}</div>
-                     <div className='col-3 features '>${customhallcost}</div>
+                     <div className='col firstheading features text-start '>Custom Hall Template </div>
+                     <div className='col  features' >{customhall}</div>
+                     <div className='col features '>${customhallcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>Custom Booth Template </div>
-                     <div className='col-3 features' >{custombooth}</div>
-                     <div className='col-3  features'>${customboothcost}</div>
+                     <div className='col firstheading features text-start '>Custom Booth Template </div>
+                     <div className='col  features' >{custombooth}</div>
+                     <div className='col  features'>${customboothcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>White Label </div>
-                     <div className='col-3 features' >{whitelabel}</div>
-                     <div className='col-3 features '>${whitelabelcost}</div>
+                     <div className='col firstheading features text-start '>White Label </div>
+                     <div className='col features' >{whitelabel}</div>
+                     <div className='col features '>${whitelabelcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'> Custom Landing Template </div>
-                     <div className='col-3 features' >{customlanding}</div>
-                     <div className='col-3 features '>${customlandingcost}</div>
+                     <div className='col firstheading features text-start '> Custom Landing Template </div>
+                     <div className='col features' >{customlanding}</div>
+                     <div className='col features '>${customlandingcost}</div>
                   </div>
                 
                   <div className='row'>
-                     <div className='col-4 features'>   Branded Lobby Walkthrough </div>
-                     <div className='col-3 features' >{three}</div>
-                     <div className='col-3 features '>${threecost}</div>
+                     <div className='col firstheading features text-start '>   Branded Lobby Walkthrough </div>
+                     <div className='col features' >{three}</div>
+                     <div className='col features '>${threecost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>  Custom Lobby Template </div>
-                     <div className='col-3 features' >{customlobby}</div>
-                     <div className='col-3 features '>${customlobbycost}</div>
+                     <div className='col firstheading features text-start '>  Custom Lobby Template </div>
+                     <div className='col features' >{customlobby}</div>
+                     <div className='col features '>${customlobbycost}</div>
                   </div>
 
                   <div className='row'>
-                     <div className='col-4 features'>  Auditorium  </div>
-                     <div className='col-3 features' >{auditorium}</div>
-                     <div className='col-3  features'>${auditoriumcost}</div>
+                     <div className='col firstheading features text-start '>  Auditorium  </div>
+                     <div className='col features' >{auditorium}</div>
+                     <div className='col  features'>${auditoriumcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'>  Games with Leaderboard  </div>
-                     <div className='col-3 features' >{games}</div>
-                     <div className='col-3 features'>${gamescost}</div>
+                     <div className='col firstheading features text-start '>  Games  with Leaderboard  </div>
+                     <div className='col features' >{games}</div>
+                     <div className='col features'>${gamescost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'> Photo Booth   </div>
-                     <div className='col-3 features' >{booth}</div>
-                     <div className='col-3 features'>${boothcost}</div>
+                     <div className='col firstheading features text-start '> Photo Booth   </div>
+                     <div className='col features' >{booth}</div>
+                     <div className='col features'>${boothcost}</div>
                   </div>
                   <div className='row'>
-                     <div className='col-4 features'> Onboarding Executive Support   </div>
-                     <div className='col-3 features' >{hour}</div>
-                     <div className='col-3 features'>${hourcost}</div>
+                     <div className='col firstheading features text-start '> Onboarding Executive Support   </div>
+                     <div className='col features' >{hour}</div>
+                     <div className='col features'>${hourcost}</div>
                   </div>
                   <div className='row'>
-                      <div className='col-10 total2'>Total- ${total}<span className='words' >({totalwords.toUpperCase()}  DOLLARS ) </span> </div>
+                      <div className='col  total2'>Total- ${total}<span className='words' >({totalwords.toUpperCase()}  DOLLARS ) </span> </div>
                      
                       
                      
@@ -607,7 +678,7 @@ function checkname(event){
  
                
         <div className='row'>    <div className='col'> </div>
-<div id='qotform' className='col-5 '>
+<div id='qotform' className='col-md-5 '>
 <form class="row g-3">
 <div class="col-12">
     <label for="inputCity"  class="form-label" >Full name <span style={{color:"red"}}>*</span></label>
@@ -649,7 +720,7 @@ function checkname(event){
 </form>
 
 </div>
-<div className='col'></div>
+<div className='col'></div></div>
 <pre></pre><pre></pre><pre></pre><pre></pre>
 </div>    
                 

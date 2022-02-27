@@ -18,6 +18,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Homepage from './homepage';
 
 
 
@@ -29,16 +30,15 @@ function App() {
 
 
 
-
 <ScrollToTop>
 <Routes>
-
-      <Route path="home"  element={<Calculator/>}  />
+<Route path="request"  element={<Request/>}  />
+      <Route path="home"  element={<Homepage/>}  />
       <Route path="calculator" element={<Calculator />} />
- 
-     <Route path="calculator_medium"  element={<Medium/>}  />
-     <Route path="calculator_small"  element={<Small/>}  />
-     <Route path="calculator_custom"  element={<Custom/>}  />
+      <Route path="/"  element={<Homepage/>}  />
+     <Route path="calculator/medium"  element={<Medium/>}  />
+     <Route path="calculator/small"  element={<Small/>}  />
+     <Route path="calculator/custom"  element={<Custom/>}  />
      <Route path="/pricing/pricing"  element={<Pricing/>}  />
     
     
@@ -47,8 +47,8 @@ function App() {
 
     </ScrollToTop>
    <pre></pre>
-  <Footer/>
 
+<Footer/>
 </div>
 
 

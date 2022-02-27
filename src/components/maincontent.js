@@ -13,9 +13,9 @@ import contact from './images/contact.png'
 function Content(){
 
 return(
-<div>
 
-<div className='container  ' >
+
+<div className='container-sm  ' >
     <div className='row expolretopicsrow'>
        
       
@@ -58,9 +58,9 @@ return(
 
 </p>
 </div>
-</div>
-<pre></pre><pre></pre>
-<div className='row  '>
+
+<div className='content_space'><pre></pre></div>
+
 
 <div className='col-md cont_container'>
 <div><img src={image6} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
@@ -88,8 +88,8 @@ return(
 
 </p>
 </div>
-</div>
 
+</div>
 
 
 
@@ -100,9 +100,9 @@ return(
          <div class="row  ">
              <div className='col-2'></div>
            
-              <div className='col-3'><img src={contact}></img></div>
+              <div className='col-md-3 text-center'><img className='write_image' src={contact} height='100%' width='140%'></img></div>
              <div className='col-1'></div>
-             <div className='col-4 sidecontent'>
+             <div className='col-md-4 sidecontent'>
            <h1>Contact Us</h1>
            <p>
            If you have question which is beyond this 
@@ -120,10 +120,10 @@ return(
 
 
 
-
+        <br></br><br></br>
      </div>
 
-</div>
+
 );
 
 }

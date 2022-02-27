@@ -185,7 +185,7 @@ return(
 </div>
                  </div>
                  <pre></pre><pre></pre>
-               <div id='plancont'><h6   id='plan'></h6><Link id='custom' to='/calculator_custom' className=' btn btn-outline-primary btn2 '>Continue</Link> <Link id='small' to='/calculator_small' className='  btn btn-outline-primary btn2'>Continue</Link><Link id='medium' to='/calculator_medium' className='  btn btn-outline-primary btn2'>Continue</Link></div>
+               <div id='plancont'><h6   id='plan'></h6><Link id='custom' to='/calculator/custom' className=' btn btn-outline-primary btn2 '>Continue</Link> <Link id='small' to='/calculator/small' className='  btn btn-outline-primary btn2'>Continue</Link><Link id='medium' to='/calculator/medium' className='  btn btn-outline-primary btn2'>Continue</Link></div>
             
                 </div>
                 

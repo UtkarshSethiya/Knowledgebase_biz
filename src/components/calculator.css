@@ -3,7 +3,7 @@
     src: url(fonts/Roboto-Light.ttf);
   }
 
-
+/*  <button onClick={stepfunction}>Next</button>*/
 .calcontainer{
  border:1px solid lightgray;
  border-radius: 20px;
@@ -13,6 +13,24 @@
 }
 p{
     font-family: Arial, Helvetica, sans-serif !important;
+}
+#step4{
+    display: none ;
+}
+#step8{
+    display: none ;
+}
+#stepquotation{
+    display: none ;
+    
+}
+#previous{
+    visibility: hidden;
+}
+
+
+.navigation_buttons{
+    justify-content: space-between;
 }
 #flexCheckChecked{
     font-size: 30px !important;
@@ -205,9 +223,7 @@ font-style: normal;
 font-weight: normal;
 font-size: 50px;
 }
-.imgcont{
-   
-}
+
 .calimage{
     width: 130%;
 }

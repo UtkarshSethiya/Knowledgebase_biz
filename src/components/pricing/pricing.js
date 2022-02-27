@@ -20,27 +20,26 @@ function Pricing(){
 
   
     return(<div>
-        <div class="container-fluid row navbar">
-    <div className='col-3  topleft navbar  '>
-    <a class="navbar-brand" href="https://bizconnectevents.com/" ><img className='logo' src={logo} height="62px" width="124px"></img>   </a>
-    <Link class="navbar-brand home " to='/home'> Home</Link>
+        <div class="row navbar">
+        <div class="navbar  ">
+    <div className='topleft'>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
+    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
     
     </div>
     
-    <div className='col middle  '  > </div>
+  
 
-    <div className='col-3 navbar  subscribe'>
+    <div className=' '>
+    <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
+   
+    <Link  className="topbuttons btn " to="/calculator"><i class="bi topicons bi-calculator-fill"></i> Calculator</Link>
  
-    
-   <Link  className="topbuttons btn " to="/calculator"><i class="bi bi-calculator-fill"></i> Calculator</Link>
- 
-    <button className="btn subscribe btn1 " type="submit">Subscribe</button>
+    <button className="btn topbuttons subscribe btn1 " type="submit">Subscribe</button>
   
     </div>
     
   </div>
-        
-        <div>
         <h1 class="text-white py-3 text-center py-lg-5 pricing">
         PRICING
       </h1>

@@ -8,25 +8,26 @@ function Calheader(){
 
 
 return(<div>
-    <div class="container-fluid row navbar">
-    <div className='col-3  topleft navbar  '>
-    <a class="navbar-brand" href="https://bizconnectevents.com/" ><img className='logo' src={logo} height="62px" width="124px"></img>   </a>
-    <Link class="navbar-brand home " to='/home'> Home</Link>
+   <div class="navbar  ">
+    <div className='topleft'>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
+    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
     
     </div>
     
-    <div className='col-6 middle  '  > </div>
-
-    <div className='col rightbuttons navbar  subscribe'>
   
-    <Link className="topbuttons btn" to="/pricing/pricing"><i class="bi bi-cash-coin"></i> Pricing</Link>
 
+    <div className=' '>
+    <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
+    <Link className="topbuttons btn" to="/pricing/pricing"><i class="bi topicons bi-cash-coin"></i> Pricing</Link>
+  
  
-    <button className="btn subscribe btn1 " type="submit">Subscribe</button>
+    <button className="btn topbuttons subscribe btn1 " type="submit">Subscribe</button>
   
     </div>
     
   </div>
+
 </div>)
 
 }
