@@ -2,6 +2,7 @@
 import './calculator.css'
 import React, { useState } from 'react';
 import './pdf.css'
+import money from './images/Money Bag.png'
 import { Link } from "react-router-dom";
 import quest from './images/quest.png';
 import logo from './images/logo.png';
@@ -9,6 +10,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { jsPDF } from "jspdf";
 import Calheader from './calculatorheader';
+import Table from './calculator_table';
 
 function Custom(){
     const[no,setno]=useState(1);
@@ -24,6 +26,82 @@ function Custom(){
     const[games,setgames]=useState(0);
     const[booth,setbooth]=useState(0);
     const[hour,sethour]=useState(0);
+
+    function India(){
+      let india = document.getElementById('selectform');
+     if(india.value=='IN'){
+     document.getElementById('gstnumber').style.display='block'
+     }
+     else{
+      document.getElementById('gstnumber').style.display='none'
+     }
+     
+    }
+
+function previousfunction(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+ 
+  let step3= document.getElementById('step3');  
+  let step4= document.getElementById('step4');  
+  let step8= document.getElementById('step8');  
+  let stepquotation= document.getElementById('stepquotation');  
+
+   if(step4.style.display!='none'){
+    step3.style.display='block';
+    step4.style.display='none';
+    step8.style.display='none';
+    document.getElementById('previous').style.visibility='hidden';
+  }
+  else if(step8.style.display!='none'){
+    step3.style.display='none';
+    step4.style.display='block';
+    step8.style.display='none';
+    stepquotation.style.display='none';
+  }
+  else if(stepquotation.style.display!='none'){
+    step3.style.display='none';
+    step4.style.display='none';
+    step8.style.display='block';
+    stepquotation.style.display='none';
+    document.getElementById('next').style.display='block'
+  }
+}
+
+
+    function nextfunction(){
+  
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+
+    let step3= document.getElementById('step3');  
+    let step4= document.getElementById('step4');  
+    let step8= document.getElementById('step8');  
+    let stepquotation= document.getElementById('stepquotation');  
+    if(step3.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='block';
+      document.getElementById('previous').style.visibility='visible';
+
+    }
+    else if(step4.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='none';
+      step8.style.display='block';
+   
+      
+    }
+    else if(step8.style.display!='none'){
+      step3.style.display='none';
+      step4.style.display='none';
+      step8.style.display='none';
+      stepquotation.style.display='block';
+      document.getElementById('next').style.display='none'
+    }
+    
+  
+    }
+
     
     var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -126,13 +204,8 @@ today = dd + '/' + mm + '/' + yyyy;
         setcustomlobby(event.target.value);
     }
     
-    function setthreenumber(){
-        if(document.getElementById("three").checked==false){
-            setthree(0)
-          };
-          if(document.getElementById("three").checked==true){
-           setthree(1);
-          }
+    function setthreenumber(event){
+        setthree(event.target.value)
     }
     function gamesnumber(event){
         setgames(event.target.value);
@@ -262,6 +335,8 @@ today = dd + '/' + mm + '/' + yyyy;
     let gamescost=(games)*50;
     let boothcost=booth*100;
     let hourcost=(hour)*75
+    let plantype='Custom'
+    let plancost;
     /*Quotation function*/
     
     var converter = require('number-to-words');
@@ -278,31 +353,31 @@ today = dd + '/' + mm + '/' + yyyy;
 
                 <Calheader/>
           
-            <div className='calheading'> <pre></pre> <pre></pre><pre></pre> <pre></pre>
-            <h1 id='font'>CALCULATOR</h1>
-            <pre></pre> <pre></pre><pre></pre> <pre></pre>
-            </div>
            
-            <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link>
+        
     
                 <div className="col-md-1"></div>
                     
                 <div className="col-md-10 ">
                 
-                <p id='plantype'>Custom Plan</p>
+                
+          
+            <div id='step3'>
+            <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link><pre></pre>
                     <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
                     <div className='row step '>
                 <div className="col-md-7   ">
                     
+              
+                    <h5 >Attendees Volume <Tippy className='tippy' content="Choose the number of attendees for the event!
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                    
-                    <pre></pre>
-                    <h5 >Attendees Volume <Tippy className='tippy' content="Give us the number of Attendes in the event"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
-                   
-                   <div id='plancont'><h6   id='plan'></h6> <Link id='medium' to='/calculator_medium' className='  btn btn-outline-primary btn2'>Continue</Link></div>
+                   <div id='plancont'><h6   id='plan'></h6> </div>
                    
                    
                     
-                    <div className=" row step ">
+                    <div className=" row  ">
                             
                             <p>Define the volume of attendees per month for all your events <Tippy className='tippy' content="For Custom Plan  every  1-25 users $15 wil be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
@@ -318,12 +393,12 @@ today = dd + '/' + mm + '/' + yyyy;
 
 
                      
-                    <div className="row  step  ">
+                    <div className="row  ">
                    <div className='col-md-7'>
                     <h5>Exhibitors Volume </h5>
                     <div className='col-12'>
-                     <pre><pre></pre></pre>
-                     <p>Extra Booth($100/booth) <Tippy className='tippy' content="For Custom plan  you will be charged $100/Booth  "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                     <pre></pre>
+                     <p>Extra Booth($100/booth) <Tippy className='tippy' content="As you have choosen Custom plan you will be charged $100/Booth  "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
                        <div className='row'>
                       
                         <div className='col-1  zero'>0</div>
@@ -334,9 +409,9 @@ today = dd + '/' + mm + '/' + yyyy;
                         <input id='exhibitor'  type='number' className='value inputbox'  min="0" max="100" step="1" value={exhibitor} onChange={exhibitornumber} ></input><pre></pre>
                         <h6>Cost: ${exhibitorcost}</h6>
                     </div>
-                       <pre></pre>
+                      
                         
-                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="For Custom plan  you will be charged $100/Booth  "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have choosen Custom plan you will be charged $100/hall  "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={customhall} min="0" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -346,9 +421,11 @@ today = dd + '/' + mm + '/' + yyyy;
                         <h6>Cost: ${customhallcost}</h6>
                         </div>
     
-                        <pre></pre>
+                      
                         
-                        <p>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content="Select no of custom booths "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                        <p>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content="Pick the no. of custom booths you want!
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" min="0" max="50" step="1" value={custombooth} onChange={customboothnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -364,13 +441,18 @@ today = dd + '/' + mm + '/' + yyyy;
                     </div>
                     
                     </div>
-    
-                    <div className="row step "><pre></pre>
+    </div>
+    <div id='step4'>
+                    <div className="row  "><pre></pre>
                     <h3 className='fheading'>Step 4 : Select your Module <pre></pre></h3>
                     <pre></pre>
                       
-                       <div className='col   '><pre></pre><pre></pre>
-                           <h5 >White Label ($250/event) <Tippy className='tippy' content="This is the cost for 1 event.For more and yearly subscription please talk to us"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+                       <div className='col   '>
+                           <h5 >White Label ($250/event) <Tippy className='tippy' content="Event URL - eventname.customerdomain.com 
+You have 2 option here 1)  Per event at $ 250 
+2) Talk to us One time purchase for a full year
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                            <p>
                            Showcase your brand! Create a white-label platform using your brand name, font, colours etc for an exclusive experience.
                            </p>
@@ -383,12 +465,13 @@ today = dd + '/' + mm + '/' + yyyy;
                        
                         </div>
     
-                        <div className="   row step ">
-                            <h3 className='fheading'> Step 5: Landing/Event Microsite<pre></pre></h3><pre></pre>
+                        <div className="   row  ">
+                            <h3 className='fheading'> Step 5: Landing/Event Microsite<pre></pre></h3>
                           
                                <div className='col-md-7'>
-                               <div className='row'><pre></pre><pre></pre>
-                            <p>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                               <div className='row'><pre></pre>
+                            <p>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="Pay $200 for each template!
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -400,22 +483,27 @@ today = dd + '/' + mm + '/' + yyyy;
     
                              <div className="  row step ">
                             <h3 className='fheading'>Step 6: 3D and 360° Walkthrus <pre></pre> </h3>
-                            <pre></pre><pre></pre><pre></pre>
-                            <div className='col-5'><p>Branded Lobby Walkthrough ($300/event) <Tippy className='tippy' content="Depending on no of events 3D and 360° Walkthrus will be charged Max to 3 doors"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p></div>
-                     
-                    
-                        <div className='col'><input class="form-check-input" type="checkbox" value="" id="three" onChange={setthreenumber}></input>
+                            <pre></pre>
+                            <div className='col-md-7'><div className='row'>
+                            <p>Branded Lobby Walkthrough ($300/Walkthrus) <Tippy className='tippy' content="Branded walkthrus exterior or interior with your logo brand and pictures"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                            <span className='col-1 zero'>0</span>
+                        <div className='col-6'><input type="range" value={three} min="0" max="50" step="1" onChange={setthreenumber}  class="form-range  " id="customRange1"/></div>
+                        <span className='col-1'>50</span>
+                        <div className='col-1'></div>
+                        <div className='col '>
+                        <input className='value inputbox'  type='number' value={three} min="0" max="50" step="1" onChange={setthreenumber} ></input>
                         <pre></pre>
-                        <h6>Cost: ${threecost}</h6></div>
+                        <h6 className=''>Cost: ${threecost}</h6></div>
                              </div>
+                              </div></div>
     
     
     
                              <div className="  row step ">
-                            <h3 className='fheading'>Step 7: Lobby<pre></pre></h3><pre></pre>
+                            <h3 className='fheading'>Step 7: Lobby<pre></pre></h3>
                             <div className='col-md-7'>
-                                <div className='row'><pre></pre><pre></pre>
-                            <p>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content=" You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </p>
+                                <div className='row'><pre></pre>
+                            <p>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content=" Pay $200 for each template!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -424,13 +512,14 @@ today = dd + '/' + mm + '/' + yyyy;
                         <input className='value inputbox'  type='number' value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  ></input><pre></pre>
                         <h6>Cost: ${customlobbycost}</h6></div>
                              </div></div></div>
-    
+                             </div>
+                             <div id='step8'>
     
                              <div className="  row step ">
-                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3><pre></pre><pre></pre>
+                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3>
                             <div className='col-md-7'><pre></pre>
                                 <div className='row'>
-                            <p>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></p>
+                            <p>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" Pay $200 for each template!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range"   value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -441,9 +530,9 @@ today = dd + '/' + mm + '/' + yyyy;
                              </div></div></div>
     
     
-                             <div className="  row step ">
+                             <div className="  row  ">
                             <h3 className='fheading'>Step 9: Engagement<pre></pre> </h3>
-                            <pre></pre><pre></pre>
+                            <pre></pre> 
                             <div className='col-md-6'>
                                 <div className='row'>
                             <p>Games with Leaderboard ($50/game) <Tippy className='tippy' content="For Custom plan you will be charged $50/game "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
@@ -457,7 +546,8 @@ today = dd + '/' + mm + '/' + yyyy;
                         <h6>Cost: ${gamescost}</h6></div></div></div>
     
      <div className='col-md-6'><div className='row'>
-                   <p>Photo Booth ($100/month) <Tippy className='tippy' content="You will be charged $100 per month"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                   <p>Photo Booth ($100/month) <Tippy className='tippy' content="Photo Booth chargeable for $100 per month.
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={booth} min="0" max="10" step="1" onChange={boothnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>10</span>
@@ -471,11 +561,15 @@ today = dd + '/' + mm + '/' + yyyy;
     
                              <div className="  row step ">
                             <h3 className='fheading'>Step 10: Support  <pre></pre></h3>
-                            <pre></pre> <pre></pre>
+                            
                             <div className='col-md-7'>
-                                <div className='row'>
-                            <p>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support, 1st Event Free Tech Support 
-    Post 1st Event - Per hr $ 75"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </p>
+                                <div className='row'><pre></pre>
+                            <p>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support available for $75 per month,
+Free tech support for first event!
+
+
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={hour} min="0" max="50" step="1" onChange={hournumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50 hours</span>
@@ -484,110 +578,22 @@ today = dd + '/' + mm + '/' + yyyy;
                         <input className='value inputbox' type='number' value={hour}min="0" max="50" step="1" onChange={hournumber}  ></input><pre></pre>
                         <h6>Cost: ${hourcost}</h6></div></div>
                              </div></div>
-    
-                             <pre></pre> <pre></pre> 
+                             </div>
+                             <div id='stepquotation'>
+                            
                    
                    
-                            <div className='totalcontainer'> <span className='total'>Total: ${total} </span><pre></pre>
+                            <div className='totalcontainer'> <span className='total'><img src={money}></img>Total: ${total} </span><pre></pre>
+                            <Table attend={attend} attendcost={attendcost} exhibitor={exhibitor} exhibitorcost={exhibitorcost} customhall={customhall} customhallcost={customhallcost} custombooth={custombooth} customboothcost={customboothcost} whitelabel={whitelabel} whitelabelcost={whitelabelcost} customlanding={customlanding} customlandingcost={customlandingcost} customlobby={customlobby} customlobbycost={customlobbycost} three={three} threecost={threecost} auditorium={auditorium} auditoriumcost={auditoriumcost} games={games} gamescost={gamescost} booth={booth} boothcost={boothcost} hour={hour} hourcost={hourcost} total={total} plantype={plantype} plancost={plancost} />
                              <h5 id='message'>Great,You are eligible for Custom Plan!</h5>
                             <pre></pre>
-                             <button id='buttn' className='qotationbutton' onClick={getqotform}>Get My Quotation</button>
+                             <button id='buttn' className='qotationbutton' onClick={getqotform}>Download Quotation</button>
                              <div id='spiner' class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-                </div></div>
-                <div id='qotation' className='row  invoice2 '>
-                   
-                   <div className='row '>
-                       <div className='col-2 '><img className='logo'  src={logo} height='80px' ></img>
-                       
-                        <p className='adress'>  To : {fullname}<br></br>{mail} <br></br>   {gst}</p></div>
-                       <div className='col-4 bf'>  <p> Date: {today} <br></br>   Plantype: <span className='total2'>Custom</span> </p> </div>
-                        
-                      
-                        </div>
-                  
-                 <div className='col-1'></div>
-                 <div className='col-7  ' >
-                  <div className='row '>
-                     <div className='col-4  top '>Features</div>
-                     <div className='col-3  top ' >Quantity</div>
-                     <div className='col-3  top '>Cost</div>
-                  </div>
-                 
-                  <div className='row'>
-                     <div className='col-4 features'>Attendees Volume</div>
-                     <div className='col-3 features' >{attend}</div>
-                     <div className='col-3 features '>${attendcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>Extra Booth</div>
-                     <div className='col-3 features' >{exhibitor}</div>
-                     <div className='col-3 features'>${exhibitorcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>Custom Hall Template </div>
-                     <div className='col-3 features' >{customhall}</div>
-                     <div className='col-3 features '>${customhallcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>Custom Booth Template </div>
-                     <div className='col-3 features' >{custombooth}</div>
-                     <div className='col-3  features'>${customboothcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>White Label </div>
-                     <div className='col-3 features' >{whitelabel}</div>
-                     <div className='col-3 features '>${whitelabelcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'> Custom Landing Template </div>
-                     <div className='col-3 features' >{customlanding}</div>
-                     <div className='col-3 features '>${customlandingcost}</div>
-                  </div>
+                </div>
                 
-                  <div className='row'>
-                     <div className='col-4 features'>   Branded Lobby Walkthrough </div>
-                     <div className='col-3 features' >{three}</div>
-                     <div className='col-3 features '>${threecost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>  Custom Lobby Template </div>
-                     <div className='col-3 features' >{customlobby}</div>
-                     <div className='col-3 features '>${customlobbycost}</div>
-                  </div>
-
-                  <div className='row'>
-                     <div className='col-4 features'>  Auditorium  </div>
-                     <div className='col-3 features' >{auditorium}</div>
-                     <div className='col-3  features'>${auditoriumcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'>  Games with Leaderboard  </div>
-                     <div className='col-3 features' >{games}</div>
-                     <div className='col-3 features'>${gamescost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'> Photo Booth   </div>
-                     <div className='col-3 features' >{booth}</div>
-                     <div className='col-3 features'>${boothcost}</div>
-                  </div>
-                  <div className='row'>
-                     <div className='col-4 features'> Onboarding Executive Support   </div>
-                     <div className='col-3 features' >{hour}</div>
-                     <div className='col-3 features'>${hourcost}</div>
-                  </div>
-                  <div className='row'>
-                      <div className='col-10 total2'>Total- ${total} <span className='words' >({totalwords.toUpperCase()}  DOLLARS ) </span> </div>
-                     
-                      
-                     
-                  </div>
-                  </div>
-                  <p >Great ,You are Eligible for Custom Plan , Talk with us !<br></br><div className='row'><pre></pre><span className='lastline col-8'>***Quotation Validity is for 5 days from the time of Quotation generated date  Please  get back to us at accounts@bizconnectevents.com for any queries 
-
-</span></div></p>
-               </div>
+               
  
                
         <div className='row'>    <div className='col'> </div>
@@ -616,28 +622,385 @@ today = dd + '/' + mm + '/' + yyyy;
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Country </label>
-    <input type="text" class="form-control"  required placeholder='Country' id="inputCity" />
+    <div class="input-group mb-3">
+  <select id='selectform'  onChange={India} class="form-select" >
+    <option selected>Select Country</option>
+    <option value="AF">Afghanistan</option>
+    <option value="AX">Aland Islands</option>
+    <option value="AL">Albania</option>
+    <option value="DZ">Algeria</option>
+    <option value="AS">American Samoa</option>
+    <option value="AD">Andorra</option>
+    <option value="AO">Angola</option>
+    <option value="AI">Anguilla</option>
+    <option value="AQ">Antarctica</option>
+    <option value="AG">Antigua and Barbuda</option>
+    <option value="AR">Argentina</option>
+    <option value="AM">Armenia</option>
+    <option value="AW">Aruba</option>
+    <option value="AU">Australia</option>
+    <option value="AT">Austria</option>
+    <option value="AZ">Azerbaijan</option>
+    <option value="BS">Bahamas</option>
+    <option value="BH">Bahrain</option>
+    <option value="BD">Bangladesh</option>
+    <option value="BB">Barbados</option>
+    <option value="BY">Belarus</option>
+    <option value="BE">Belgium</option>
+    <option value="BZ">Belize</option>
+    <option value="BJ">Benin</option>
+    <option value="BM">Bermuda</option>
+    <option value="BT">Bhutan</option>
+    <option value="BO">Bolivia</option>
+    <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+    <option value="BA">Bosnia and Herzegovina</option>
+    <option value="BW">Botswana</option>
+    <option value="BV">Bouvet Island</option>
+    <option value="BR">Brazil</option>
+    <option value="IO">British Indian Ocean Territory</option>
+    <option value="BN">Brunei Darussalam</option>
+    <option value="BG">Bulgaria</option>
+    <option value="BF">Burkina Faso</option>
+    <option value="BI">Burundi</option>
+    <option value="KH">Cambodia</option>
+    <option value="CM">Cameroon</option>
+    <option value="CA">Canada</option>
+    <option value="CV">Cape Verde</option>
+    <option value="KY">Cayman Islands</option>
+    <option value="CF">Central African Republic</option>
+    <option value="TD">Chad</option>
+    <option value="CL">Chile</option>
+    <option value="CN">China</option>
+    <option value="CX">Christmas Island</option>
+    <option value="CC">Cocos (Keeling) Islands</option>
+    <option value="CO">Colombia</option>
+    <option value="KM">Comoros</option>
+    <option value="CG">Congo</option>
+    <option value="CD">Congo, Democratic Republic of the Congo</option>
+    <option value="CK">Cook Islands</option>
+    <option value="CR">Costa Rica</option>
+    <option value="CI">Cote D'Ivoire</option>
+    <option value="HR">Croatia</option>
+    <option value="CU">Cuba</option>
+    <option value="CW">Curacao</option>
+    <option value="CY">Cyprus</option>
+    <option value="CZ">Czech Republic</option>
+    <option value="DK">Denmark</option>
+    <option value="DJ">Djibouti</option>
+    <option value="DM">Dominica</option>
+    <option value="DO">Dominican Republic</option>
+    <option value="EC">Ecuador</option>
+    <option value="EG">Egypt</option>
+    <option value="SV">El Salvador</option>
+    <option value="GQ">Equatorial Guinea</option>
+    <option value="ER">Eritrea</option>
+    <option value="EE">Estonia</option>
+    <option value="ET">Ethiopia</option>
+    <option value="FK">Falkland Islands (Malvinas)</option>
+    <option value="FO">Faroe Islands</option>
+    <option value="FJ">Fiji</option>
+    <option value="FI">Finland</option>
+    <option value="FR">France</option>
+    <option value="GF">French Guiana</option>
+    <option value="PF">French Polynesia</option>
+    <option value="TF">French Southern Territories</option>
+    <option value="GA">Gabon</option>
+    <option value="GM">Gambia</option>
+    <option value="GE">Georgia</option>
+    <option value="DE">Germany</option>
+    <option value="GH">Ghana</option>
+    <option value="GI">Gibraltar</option>
+    <option value="GR">Greece</option>
+    <option value="GL">Greenland</option>
+    <option value="GD">Grenada</option>
+    <option value="GP">Guadeloupe</option>
+    <option value="GU">Guam</option>
+    <option value="GT">Guatemala</option>
+    <option value="GG">Guernsey</option>
+    <option value="GN">Guinea</option>
+    <option value="GW">Guinea-Bissau</option>
+    <option value="GY">Guyana</option>
+    <option value="HT">Haiti</option>
+    <option value="HM">Heard Island and Mcdonald Islands</option>
+    <option value="VA">Holy See (Vatican City State)</option>
+    <option value="HN">Honduras</option>
+    <option value="HK">Hong Kong</option>
+    <option value="HU">Hungary</option>
+    <option value="IS">Iceland</option>
+    <option  id='India' value="IN">India</option>
+    <option value="ID">Indonesia</option>
+    <option value="IR">Iran, Islamic Republic of</option>
+    <option value="IQ">Iraq</option>
+    <option value="IE">Ireland</option>
+    <option value="IM">Isle of Man</option>
+    <option value="IL">Israel</option>
+    <option value="IT">Italy</option>
+    <option value="JM">Jamaica</option>
+    <option value="JP">Japan</option>
+    <option value="JE">Jersey</option>
+    <option value="JO">Jordan</option>
+    <option value="KZ">Kazakhstan</option>
+    <option value="KE">Kenya</option>
+    <option value="KI">Kiribati</option>
+    <option value="KP">Korea, Democratic People's Republic of</option>
+    <option value="KR">Korea, Republic of</option>
+    <option value="XK">Kosovo</option>
+    <option value="KW">Kuwait</option>
+    <option value="KG">Kyrgyzstan</option>
+    <option value="LA">Lao People's Democratic Republic</option>
+    <option value="LV">Latvia</option>
+    <option value="LB">Lebanon</option>
+    <option value="LS">Lesotho</option>
+    <option value="LR">Liberia</option>
+    <option value="LY">Libyan Arab Jamahiriya</option>
+    <option value="LI">Liechtenstein</option>
+    <option value="LT">Lithuania</option>
+    <option value="LU">Luxembourg</option>
+    <option value="MO">Macao</option>
+    <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+    <option value="MG">Madagascar</option>
+    <option value="MW">Malawi</option>
+    <option value="MY">Malaysia</option>
+    <option value="MV">Maldives</option>
+    <option value="ML">Mali</option>
+    <option value="MT">Malta</option>
+    <option value="MH">Marshall Islands</option>
+    <option value="MQ">Martinique</option>
+    <option value="MR">Mauritania</option>
+    <option value="MU">Mauritius</option>
+    <option value="YT">Mayotte</option>
+    <option value="MX">Mexico</option>
+    <option value="FM">Micronesia, Federated States of</option>
+    <option value="MD">Moldova, Republic of</option>
+    <option value="MC">Monaco</option>
+    <option value="MN">Mongolia</option>
+    <option value="ME">Montenegro</option>
+    <option value="MS">Montserrat</option>
+    <option value="MA">Morocco</option>
+    <option value="MZ">Mozambique</option>
+    <option value="MM">Myanmar</option>
+    <option value="NA">Namibia</option>
+    <option value="NR">Nauru</option>
+    <option value="NP">Nepal</option>
+    <option value="NL">Netherlands</option>
+    <option value="AN">Netherlands Antilles</option>
+    <option value="NC">New Caledonia</option>
+    <option value="NZ">New Zealand</option>
+    <option value="NI">Nicaragua</option>
+    <option value="NE">Niger</option>
+    <option value="NG">Nigeria</option>
+    <option value="NU">Niue</option>
+    <option value="NF">Norfolk Island</option>
+    <option value="MP">Northern Mariana Islands</option>
+    <option value="NO">Norway</option>
+    <option value="OM">Oman</option>
+    <option value="PK">Pakistan</option>
+    <option value="PW">Palau</option>
+    <option value="PS">Palestinian Territory, Occupied</option>
+    <option value="PA">Panama</option>
+    <option value="PG">Papua New Guinea</option>
+    <option value="PY">Paraguay</option>
+    <option value="PE">Peru</option>
+    <option value="PH">Philippines</option>
+    <option value="PN">Pitcairn</option>
+    <option value="PL">Poland</option>
+    <option value="PT">Portugal</option>
+    <option value="PR">Puerto Rico</option>
+    <option value="QA">Qatar</option>
+    <option value="RE">Reunion</option>
+    <option value="RO">Romania</option>
+    <option value="RU">Russian Federation</option>
+    <option value="RW">Rwanda</option>
+    <option value="BL">Saint Barthelemy</option>
+    <option value="SH">Saint Helena</option>
+    <option value="KN">Saint Kitts and Nevis</option>
+    <option value="LC">Saint Lucia</option>
+    <option value="MF">Saint Martin</option>
+    <option value="PM">Saint Pierre and Miquelon</option>
+    <option value="VC">Saint Vincent and the Grenadines</option>
+    <option value="WS">Samoa</option>
+    <option value="SM">San Marino</option>
+    <option value="ST">Sao Tome and Principe</option>
+    <option value="SA">Saudi Arabia</option>
+    <option value="SN">Senegal</option>
+    <option value="RS">Serbia</option>
+    <option value="CS">Serbia and Montenegro</option>
+    <option value="SC">Seychelles</option>
+    <option value="SL">Sierra Leone</option>
+    <option value="SG">Singapore</option>
+    <option value="SX">Sint Maarten</option>
+    <option value="SK">Slovakia</option>
+    <option value="SI">Slovenia</option>
+    <option value="SB">Solomon Islands</option>
+    <option value="SO">Somalia</option>
+    <option value="ZA">South Africa</option>
+    <option value="GS">South Georgia and the South Sandwich Islands</option>
+    <option value="SS">South Sudan</option>
+    <option value="ES">Spain</option>
+    <option value="LK">Sri Lanka</option>
+    <option value="SD">Sudan</option>
+    <option value="SR">Suriname</option>
+    <option value="SJ">Svalbard and Jan Mayen</option>
+    <option value="SZ">Swaziland</option>
+    <option value="SE">Sweden</option>
+    <option value="CH">Switzerland</option>
+    <option value="SY">Syrian Arab Republic</option>
+    <option value="TW">Taiwan, Province of China</option>
+    <option value="TJ">Tajikistan</option>
+    <option value="TZ">Tanzania, United Republic of</option>
+    <option value="TH">Thailand</option>
+    <option value="TL">Timor-Leste</option>
+    <option value="TG">Togo</option>
+    <option value="TK">Tokelau</option>
+    <option value="TO">Tonga</option>
+    <option value="TT">Trinidad and Tobago</option>
+    <option value="TN">Tunisia</option>
+    <option value="TR">Turkey</option>
+    <option value="TM">Turkmenistan</option>
+    <option value="TC">Turks and Caicos Islands</option>
+    <option value="TV">Tuvalu</option>
+    <option value="UG">Uganda</option>
+    <option value="UA">Ukraine</option>
+    <option value="AE">United Arab Emirates</option>
+    <option value="GB">United Kingdom</option>
+    <option value="US">United States</option>
+    <option value="UM">United States Minor Outlying Islands</option>
+    <option value="UY">Uruguay</option>
+    <option value="UZ">Uzbekistan</option>
+    <option value="VU">Vanuatu</option>
+    <option value="VE">Venezuela</option>
+    <option value="VN">Viet Nam</option>
+    <option value="VG">Virgin Islands, British</option>
+    <option value="VI">Virgin Islands, U.s.</option>
+    <option value="WF">Wallis and Futuna</option>
+    <option value="EH">Western Sahara</option>
+    <option value="YE">Yemen</option>
+    <option value="ZM">Zambia</option>
+    <option value="ZW">Zimbabwe</option>
+  </select>
+  
+</div>
   </div>
   <div className='col-12'></div>
-  <div class="col-12">
-    <label for="gstin" class="form-label">GSTIN (if nationality Indian) </label>
+  <div id='gstnumber' class="col-12">
+    <label for="gstin"  class="form-label">GSTIN  </label>
     <input onInput={gstnumber} type="text" class="form-control" id="gstin" />
   </div>
   <div className='col-12'>
 
   </div>
   <div class="col-12">
-  <button type='submit' disabled={disable} id='buttn2' className='qotationbuttonmini' onClick={pdfDownload} >Get My Quotation</button>
+  <button type='submit' disabled={disable} id='buttn2' className='qotationbuttonmini' onClick={pdfDownload} >Submit</button>
   </div>
   
 </form>
 </div>
 <div className='col'></div>
-</div>    
-     <pre></pre> <pre></pre>     <pre></pre>               
-                
+</div>   
+
+
+     
+</div> <div className='d-flex navigation_buttons '><button id='previous' className='navigationbuttons' onClick={previousfunction}>Previous</button> <button id='next' className='navigationbuttons' onClick={nextfunction}>Next</button></div>                               </div>
+<pre></pre><pre></pre><pre></pre>
+
+                  <div id='qotation' className='row   invoice2 '>
+                   
+                   <div className=' topsection '>
+                       <div className=' '><img className='logo'  src={logo} height='80px' ></img>
+                       
+                        <p className='adress'>  To : {fullname}<br></br>{mail} <br></br>   {gst}</p></div>
+                       <div className=''>  <p> Date: {today} <br></br>   Plan : <span className='total2'>Custom</span> </p> </div>
+                        
+                      
+                        </div>
+                  
+                 <div className='col-1'></div>
+                 <div className='col-12  ' >
+                  <div className='row '>
+                     <div className='col  top '>Features</div>
+                     <div className='col  top ' >Quantity</div>
+                     <div className='col  top '>Cost</div>
                   </div>
-              
+                  <div className='row'>
+                       <div className='col firstheading  features text-start '>Plan Cost </div>
+                       <div className='col features' >Type:Custom</div>
+                       <div className='col features '>$$</div>
+                    </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>Attendees Volume</div>
+                     <div className='col features' >{attend}</div>
+                     <div className='col features '>${attendcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>Extra Booth</div>
+                     <div className='col features' >{exhibitor}</div>
+                     <div className='col features'>${exhibitorcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>Custom Hall Template </div>
+                     <div className='col  features' >{customhall}</div>
+                     <div className='col features '>${customhallcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>Custom Booth Template </div>
+                     <div className='col  features' >{custombooth}</div>
+                     <div className='col  features'>${customboothcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>White Label </div>
+                     <div className='col features' >{whitelabel}</div>
+                     <div className='col features '>${whitelabelcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '> Custom Landing Template </div>
+                     <div className='col features' >{customlanding}</div>
+                     <div className='col features '>${customlandingcost}</div>
+                  </div>
+                
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>   Branded Lobby Walkthrough </div>
+                     <div className='col features' >{three}</div>
+                     <div className='col features '>${threecost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>  Custom Lobby Template </div>
+                     <div className='col features' >{customlobby}</div>
+                     <div className='col features '>${customlobbycost}</div>
+                  </div>
+
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>  Auditorium  </div>
+                     <div className='col features' >{auditorium}</div>
+                     <div className='col  features'>${auditoriumcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '>  Games  with Leaderboard  </div>
+                     <div className='col features' >{games}</div>
+                     <div className='col features'>${gamescost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '> Photo Booth   </div>
+                     <div className='col features' >{booth}</div>
+                     <div className='col features'>${boothcost}</div>
+                  </div>
+                  <div className='row'>
+                     <div className='col firstheading features text-start '> Onboarding Executive Support   </div>
+                     <div className='col features' >{hour}</div>
+                     <div className='col features'>${hourcost}</div>
+                  </div>
+                  <div className='row'>
+                      <div className='col  total2'>Total- ${total}<span className='words' >({totalwords.toUpperCase()}  DOLLARS ) </span> </div>
+                     
+                      
+                     
+                  </div>
+                  </div>
+                  <p >Great ,You are Eligible for Custom Plan ,Talk with Us!<br></br><div className='row'><pre></pre><span className='lastline col-8'>***Quotation Validity is for 5 days from the time of Quotation generated date Please  get back to us at accounts@bizconnectevents.com for any queries 
+
+</span></div></p>
+               </div>
+ 
+                  </div> 
           
         );
 }

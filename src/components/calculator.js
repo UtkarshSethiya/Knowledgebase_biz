@@ -84,13 +84,12 @@ return(
    
         <div className="row "> 
        
-       
-<Calheader/>
+       <Calheader/>
+
             
-            
-            <div className='calheading'> <pre></pre> <pre></pre><pre></pre> <pre></pre><pre></pre>
-            <h1 id='font'>CALCULATOR</h1>
-            <pre></pre> <pre></pre><pre></pre> <pre></pre>
+<div className='calheading'> 
+            <h6 className='calculator_heading' >Calculator</h6>
+           
             </div>
            
             <pre></pre> <pre></pre> <pre></pre>
@@ -118,7 +117,7 @@ return(
                     <h3>Step1 : Customize Your Pricing <pre></pre></h3>
            <pre></pre> <pre></pre> <pre></pre>
            
-           <h5 >Number of Events  <Tippy className='tippy' content="Select number of Events required"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
+           <h5 >Number of Events  <Tippy className='tippy' content="Enter the number of events you want to host!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
                    
                     <label for="customRange1" className="form-label">Select the number of Events</label>
                     
@@ -146,7 +145,7 @@ return(
 
            
          
-            <h5>Date <Tippy className='tippy' content="Select your first event date"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+            <h5>Date <Tippy className='tippy' content="Select the events’ date of commencement"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
             <div className='col-12 '>
 <div className='row'> 
 <div className='col-md-8'>
@@ -154,16 +153,16 @@ return(
           </div>
            <div className='col-md-4'>
             
-                <input type='date' className='value '></input></div>
+                <input type='date' className='value ' ></input></div>
                 </div> </div>
             <pre></pre>   <pre></pre>   
             
 
         
            <div className='col-12 '>
-                <h3>Step 2 : Choose Your Plan </h3>
+                <h3>Step 2 : Choose Your Plan  <pre></pre> </h3>
                 <pre></pre> <pre></pre> <pre></pre>
-                <h5>Select no of Attendees to get your plan <Tippy className='tippy' content="Give us the number of Attendes in the event"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
+                <h5>Select no of Attendees to get your plan <Tippy className='tippy' content="Choose the number of attendees for the event !"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
                 <div className='row' ><pre></pre>
                  <div className="form-check col-3">
   <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={twohundred} ></input>
@@ -185,7 +184,7 @@ return(
 </div>
                  </div>
                  <pre></pre><pre></pre>
-               <div id='plancont'><h6   id='plan'></h6><Link id='custom' to='/calculator/custom' className=' btn btn-outline-primary btn2 '>Continue</Link> <Link id='small' to='/calculator/small' className='  btn btn-outline-primary btn2'>Continue</Link><Link id='medium' to='/calculator/medium' className='  btn btn-outline-primary btn2'>Continue</Link></div>
+               <div id='plancont' ><h6   id='plan'></h6><Link id='custom' to='/calculator/custom' className=' submit_plan_button btn '>Submit</Link> <Link id='small' to='/calculator/small' className='  submit_plan_button btn'>Submit</Link><Link id='medium' to='/calculator/medium' className='  submit_plan_button btn'>Submit</Link></div>
             
                 </div>
                 

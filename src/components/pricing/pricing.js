@@ -20,26 +20,33 @@ function Pricing(){
 
   
     return(<div>
-        <div class="row navbar">
-        <div class="navbar  ">
-    <div className='topleft'>
-   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
-    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
+      
+     
+
+      <div class="navbar  ">
+    <div className='topleft ms-3'>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="65px" width="110px"></img>   </a></div>
+    
     
     </div>
     
   
 
-    <div className=' '>
-    <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
+    <div className=''>
    
     <Link  className="topbuttons btn " to="/calculator"><i class="bi topicons bi-calculator-fill"></i> Calculator</Link>
+  
  
     <button className="btn topbuttons subscribe btn1 " type="submit">Subscribe</button>
   
     </div>
     
   </div>
+  
+
+      
+        <div class="row navbar">
+   
         <h1 class="text-white py-3 text-center py-lg-5 pricing">
         PRICING
       </h1>
@@ -62,9 +69,9 @@ function Pricing(){
 
   
 
-      <div class="d-flex px-lg-5 mx-lg-5 py-lg-3 flex-wrap">
-        <div class="card images-container-1">
-          <img src={feature1} class="card-img-top image-1" alt="Features" />
+      <div class="d-flex px-lg-5 mx-lg-5 py-lg-3 ">
+        <div class="card  images-container-1 ">
+          <img src={feature1} class="card-img-top image-1 cardfirst" alt="Features" />
           <div class="card-body py-2">
             <div class="d-flex align-items-center ms-3">
               <h5 class="card-title card-title-features card-title-features-1">
@@ -81,31 +88,20 @@ function Pricing(){
                     fill="black"
                   />
                 </svg>
-                Free
+              Features
               </h5>
             </div>
             <p class="card-text card-text-features"></p>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item text-center border-bottom-0 m-0 p-0">
-              Starting at
-            </li>
-            <li class="list-group-item fs-4 text-center p-0">
-              $ <span>0</span>/month
-            </li>
-          </ul>
-          <div class="card-body m-auto d-flex justify-content-center align-items-center">
-            <a href="#" class="btn btn-primary">
-              Subscribe
-            </a>
-          </div>
+        
+         
         </div>
         <div class="card images-container-2">
           <img src={feature2} class="card-img-top image-2" alt="Features" />
           <div class="card-body py-2">
             <div class="d-flex align-items-center ms-3">
               <img src={facebookLike} class="features-icon" alt="" />
-              <h5 class="card-title card-title-features">Regular</h5>
+              <h5 class="card-title card-title-features">Free</h5>
             </div>
             <p class="card-text card-text-features">
               For small conferences and workshops with 50 attendees per month
@@ -132,7 +128,7 @@ function Pricing(){
           <div class="card-body py-2">
             <div class="d-flex align-items-center ms-3">
               <img src={graduationCup} class="features-icon" alt="" />
-              <h5 class="card-title card-title-features">Perfect</h5>
+              <h5 class="card-title card-title-features">Regular</h5>
             </div>
             <p class="card-text card-text-features">
               For small interactive events and webinars with 200 attendees per
@@ -145,7 +141,7 @@ function Pricing(){
               Starting at
             </li>
             <li class="list-group-item fs-4 text-center p-0">
-              $ <span>0</span>/month
+              $ <span>700</span>/month
             </li>
           </ul>
           <div class="card-body m-auto d-flex justify-content-center align-items-center">
@@ -154,12 +150,12 @@ function Pricing(){
             </a>
           </div>
         </div>
-        <div class="card images-container-4">
+        <div class="card preffered  images-container-4">
           <img src={feature4} class="card-img-top image-4" alt="Features" />
           <div class="card-body py-2">
             <div class="d-flex align-items-center ms-3">
               <img src={prize} class="features-icon" alt="" />
-              <h5 class="card-title card-title-features">Custom</h5>
+              <h5 class="card-title card-title-features">Perfect</h5>
             </div>
             <p class="card-text card-text-features">
               For regular events and fairs with 500 attendees per month. Expand
@@ -172,7 +168,7 @@ function Pricing(){
               Starting at
             </li>
             <li class="list-group-item fs-4 text-center p-0">
-              $ <span>0</span>/month
+              $ <span>1000</span>/month
             </li>
           </ul>
           <div class="card-body m-auto d-flex justify-content-center align-items-center">
@@ -186,7 +182,7 @@ function Pricing(){
           <div class="card-body py-2">
             <div class="d-flex align-items-center ms-3">
               <img src={trophy} class="features-icon" alt="" />
-              <h5 class="card-title card-title-features">Features</h5>
+              <h5 class="card-title card-title-features">Custom</h5>
             </div>
             <p class="card-text card-text-features">
               For large events, expos and summits with 1000 attendees per month.
@@ -200,7 +196,7 @@ function Pricing(){
               Starting at
             </li>
             <li class="list-group-item fs-4 text-center p-0">
-              $ <span>0</span>/month
+              $$/month
             </li>
           </ul>
           <div class="card-body m-auto d-flex justify-content-center align-items-center">
@@ -998,6 +994,11 @@ function Pricing(){
         <div className="row">
           <div className="col odd no_of_sing border-end border-bottom border-top">
             Video Player
+          </div>
+          <div
+            className="col no_of_sing border-end border-bottom border-top cost-adujust"
+          >
+            $0
           </div>
           <div
             className="col no_of_sing border-end border-bottom border-top cost-adujust"

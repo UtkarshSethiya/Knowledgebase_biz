@@ -3,22 +3,22 @@ import './header.css';
 import { Link } from "react-router-dom";
 import React from 'react'
 
-
+/*<div className='home' ><Link  className='home '  to='/home'> Home</Link></div>*/
 function Calheader(){
 
 
 return(<div>
    <div class="navbar  ">
-    <div className='topleft'>
-   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
-    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
+    <div className='topleft ms-3'>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="65px" width="110px"></img>   </a></div>
+    
     
     </div>
     
   
 
-    <div className=' '>
-    <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
+    <div className=''>
+   
     <Link className="topbuttons btn" to="/pricing/pricing"><i class="bi topicons bi-cash-coin"></i> Pricing</Link>
   
  
@@ -27,6 +27,7 @@ return(<div>
     </div>
     
   </div>
+  
 
 </div>)
 

@@ -36,8 +36,10 @@ body {
   cursor: pointer;
   background-color: rgb(193, 193, 193) !important;
 }
-.card {
-  background-color: #ddffef !important;
+.card {background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #F1F1F1 100%);
+}
+.preffered{
+  background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #E4F2FF 100%);
 }
 .list-group-item {
   background-color: #ddffef;
@@ -169,6 +171,9 @@ body {
 #url {
   width: 200px;
 }
+.cardfirst{
+  margin-top: 125px !important;
+}
 #cost2 {
   padding: 10px;
   font-size: 20px;
@@ -192,13 +197,13 @@ body {
 /* row and column */
 
 .row > .col:first-child.odd {
-  background-color: #86ecc6;
+  background-color: #F1F1F1;;
 }
 .row > .col-3:first-child.odd {
   background-color: #86ecc6;
 }
 .row > .col:first-child.even {
-  background-color: #39b587;
+  background-color: #F1F1F1;;
 }
 /* Perticuler case related padding and margin */
 @media screen and (max-width: 576px) {

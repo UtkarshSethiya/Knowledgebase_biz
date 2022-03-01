@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: Roboto;
     src: url(fonts/Roboto-Light.ttf);
@@ -27,7 +29,22 @@ p{
 #previous{
     visibility: hidden;
 }
+#gstnumber{
+    display: none;
+}
+.navigationbuttons{
+    background: #1E63A4 !important;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px !important;
+color: white !important;
+font-weight: 600 !important;
+padding-left: 35px !important;
+padding-right: 35px !important;
+padding: 5px;
+border: none;
+font-size: 20px;
 
+}
 
 .navigation_buttons{
     justify-content: space-between;
@@ -62,8 +79,14 @@ h6{
 input{
     font-family:Arial, Helvetica, sans-serif !important;
 }
-.inputbox{
-    width: max-content !important;
+.value{
+    width: fit-content !important;
+    background: #FFFFFF !important;
+border: 1px solid #CACACA !important; 
+box-sizing: border-box !important;
+border-radius: 2px !important;
+padding: 6px;
+text-align: center;
 }
 .form-label{
     font-family: Roboto;
@@ -79,14 +102,14 @@ font-size: 16px;
 }
 .total{  
     text-align: center;
-    background: #071BC5;
+  
     padding: 10px;
 border-radius: 14px;
 font-family: Roboto;
 font-style: normal;
-font-weight: normal;
+font-weight: 600;
 font-size: 58px;
-color: white;
+color: black;
     
  }
  #message{
@@ -95,16 +118,17 @@ color: white;
  }
  .totalcontainer{
      text-align: center;
+    
  }
 .step{
-    padding: 20px;
+    padding-top: 20px;
 }
 .fheading{
     font-family: Roboto;
 font-style: normal;
 font-weight: 500 !important;
 font-size: 33px;
-text-align: center;
+text-align: start;
 }
 h3{
     text-align: start;
@@ -113,12 +137,12 @@ h3{
     font-weight: 300;
     font-size: 33px;
 color: rgb(30, 30, 30);
-border-bottom: 2px solid #C4C4C4;;
+border-bottom: 4px solid #C4C4C4;;
 }
 h5{
     font-family: Roboto;
 font-style: normal;
-font-weight: 700 !important;
+font-weight: 600 !important;
 font-size: 17px;
 }
 .form-range{
@@ -129,28 +153,25 @@ font-size: 17px;
 input[type="range"]::-webkit-slider-runnable-track {
 
 	background-color: #98A3FF;;
-	height: 8px !important;
+	height: 4px !important;
 
 }
 
 
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
-   
+   height: 16.5px;
+   position: relative;
+   bottom: 2px;
 	background-color: #071BC5;;
 
-	-webkit-border-radius: 40px;
+	-webkit-border-radius: 50px;
 	-moz-border-radius: 40px;
 	border-radius: 40px;
 	
 }
 
-.value{
-    border-radius: 5px;
-    padding: 3px;
-    border:1px solid blue ;
-    
-}
+
 
 .zero{
     text-align: end;
@@ -172,10 +193,19 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 #plancont{
-    width: fit-content;
+    
     
     display: flex;
     justify-content: space-between;
+}
+.submit_plan_button{
+    background: #1E63A4 !important;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 14px !important;
+color: white !important;
+font-weight: 600 !important;
+padding-left: 25px !important;
+padding-right: 25px !important;
 }
 
 #plan{
@@ -198,7 +228,7 @@ input[type="range"]::-webkit-slider-thumb {
     text-decoration: none;
     font-size: 25px;
     color: rgb(39, 39, 39) !important;
-    margin-left: 30px;
+   
 }
 .poper{
     border: none;
@@ -214,18 +244,21 @@ input[type="range"]::-webkit-slider-thumb {
   }
   
 .calheading{
-    background:rgba(196, 196, 196, 1);
-}
-#font{
-    font-family:  heading;
-    color: white;
-font-style: normal;
-font-weight: normal;
-font-size: 50px;
+    background:#F1F1F1;
 }
 
+
 .calimage{
-    width: 130%;
+   width: 130%;
+   height: 600px;
+}
+.calculator_heading{
+    text-align: center;
+font-family: Roboto !important;
+color: #1E63A4;
+font-weight: 600 !important;
+font-size: 35px;
+padding: 6px;
 }
 @media  screen and  ( max-width:800px){
     .calimage{
@@ -233,6 +266,9 @@ font-size: 50px;
     }
 }
 
+
+/* <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>*/
+/* <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link>*/
 /* <div className="  row step ">   <pre></pre>
                 <h3>Step 5 : Select your Service</h3>
                 <pre></pre>   <pre></pre>

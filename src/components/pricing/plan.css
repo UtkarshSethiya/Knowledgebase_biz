@@ -2,15 +2,11 @@ body {
     font-family: "Slabo 27px", serif;
     background: #fff;
   }
-  .imp{
-      
-  }
+
   .btn {
     letter-spacing: 1px;
   }
-  .card {
-    background-color: #ddffef;
-  }
+
   .list-group-item {
     background-color: #ddffef;
   }

@@ -1,6 +1,6 @@
 .social{
 
-background: #39B587;
+background: #1E63A4;;
 }
 
 .contact{
@@ -8,17 +8,31 @@ background: #39B587;
 }
 
 .social{
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 3px;
 
-display: flex;
-justify-content: space-between;
+
+}
+.footer_container{
+ margin-left: 25px;
+ margin-right: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.maincontact{
+    position: relative;
+    top: 2px;
+    text-decoration: none;
+    color: black;
 }
 .contactusbutton{
     cursor: pointer;
+   
     font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 font-size: 29px;
+position: relative;
 
 padding-right: 10px;
 padding-left: 10px;
@@ -30,4 +44,10 @@ border-radius: 100px;
 
 
 color: #000000;
+}
+.socialicons{
+    margin-right: 5px;
+}
+.contactbiz{
+    margin-right: 25px;
 }

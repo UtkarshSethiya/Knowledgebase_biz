@@ -1,6 +1,7 @@
 
 import './calculator.css';
-
+import money from './images/Money Bag.png'
+import Header from './header';
 import React, { useState} from 'react';
 import { Link } from "react-router-dom";
 import quest from './images/quest.png';
@@ -8,8 +9,11 @@ import logo from './images/logo.png';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { jsPDF } from "jspdf";
+import Calculator from './calculator';
 import Calheader from './calculatorheader';
-
+import Table from './calculator_table';
+import { Tab } from 'bootstrap';
+/*<input class="form-check-input" type="checkbox" value="" id="three" onChange={setthreenumber}></input>*/
 function Small(){
     const[no,setno]=useState(1);
     const[attend,setattend]=useState(200);
@@ -25,6 +29,19 @@ function Small(){
     const[booth,setbooth]=useState(0);
     const[hour,sethour]=useState(0);
     
+
+
+
+    function India(){
+      let india = document.getElementById('selectform');
+     if(india.value=='IN'){
+     document.getElementById('gstnumber').style.display='block'
+     }
+     else{
+      document.getElementById('gstnumber').style.display='none'
+     }
+     
+    }
 
 function previousfunction(){
   document.body.scrollTop = 0;
@@ -189,13 +206,8 @@ function previousfunction(){
         setcustomlobby(event.target.value);
     }
     
-    function setthreenumber(){
-        if(document.getElementById("three").checked==false){
-            setthree(0)
-          };
-          if(document.getElementById("three").checked==true){
-           setthree(1);
-          }
+    function setthreenumber(event){
+       setthree(event.target.value)
     }
     function gamesnumber(event){
         setgames(event.target.value);
@@ -329,7 +341,8 @@ function checkname(event){
     let gamescost=(games-1)*50;
     let boothcost=booth*100;
     let hourcost=(hour)*75
-    
+    let plantype="Small"
+    let plancost=700
     var converter = require('number-to-words');
 
     
@@ -344,48 +357,44 @@ function checkname(event){
     return(
             <div className="row ">
                  <Calheader/>
-            <div className='calheading'> <pre></pre> <pre></pre><pre></pre> <pre></pre><pre></pre>
-            <h1 id='font'>CALCULATOR</h1>
-            <pre></pre> <pre></pre><pre></pre> <pre></pre>
-            </div>
+            
            
-            <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link>
-    
-               
+          
                 <div className="col-md-1"></div>
                 
                   
-                
+               
                 
                 
                 
                 
                 
                 <div className="col-md-10 ">
-                
-                <p id='plantype'>Small Plan</p>
+              
+               
                 <div id='step3'>
-                    <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
-                    <div className='row  step'>
+                <div className=''><Link to='/calculator' className='back '><i class="bi bi-arrow-left-square"></i></Link></div>
+                   <pre></pre> <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
+                    <div className='row  '>
                 <div className="col-md-7   ">
                     
                    
                     <pre></pre>
-                    <h5 >Attendees Volume <Tippy className='tippy' content="Give us the number of Attendes in the event"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+                    <h5 >Attendees Volume <Tippy className='tippy' content="Choose the number of attendees for the event!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                    
-                   <div id='plancont'><h6   id='plan'></h6> <Link id='medium' to='/calculator_medium' className='  btn btn-outline-primary btn2'>Continue</Link></div>
+                  
                    
                    
                     
-                    <div className=" row step ">
+                    <div className=" row  ">
                             
                             <p>Define the volume of attendees per month for all your events <Tippy className='tippy' content="For Small Plan Attendes upto 200 are free beyond that, every additional 1-25 users $20 wil be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>200</span>
-                        <div className='col-6'><input type="range" min="200" max="500" step="25" value={attend} onkeydown="return false" onChange={attendenumber}  class="form-range  " id="customRange1"/></div>
+                        <div className='col-6'><input type="range" min="200" max="500" step="25" value={attend}  onChange={attendenumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1 '>500</span>
                        <div className='col-1'></div>
                         <div className='col '>
-                        <input className=' inputbox value' id='attend'  type='number'min="200" max="500" step="25" value={attend} onkeydown="return false" onChange={attendenumber} ></input><pre></pre>
+                        <input className=' inputbox value' id='attend'  type='number'min="200" max="500" step="25" value={attend}  onChange={attendenumber} ></input><pre></pre>
                         <h6>Cost: ${attendcost}</h6></div></div>
                              </div>
 
@@ -393,12 +402,14 @@ function checkname(event){
 
 
                      
-                    <div className="row  step  ">
+                    <div className="row    ">
                    <div className='col-md-7'>
                     <h5>Exhibitors Volume </h5>
                     <div className='col-12'>
-                     <pre><pre></pre></pre>
-                     <p>Extra Booth($100/booth) <Tippy className='tippy' content="For Small plan Booths upto 3 are free above 3 you will be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                     <pre></pre>
+                     <p>Extra Booth($100/booth) <Tippy className='tippy' content="As you have chosen the Small plan, up to 3 booths are inclusive, you can pay if you need more 
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
                        <div className='row'>
                       
                         <div className='col-1  zero'>3</div>
@@ -409,9 +420,9 @@ function checkname(event){
                         <input id='exhibitor'  type='number' className='value inputbox'  min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber} ></input><pre></pre>
                         <h6>Cost: ${exhibitorcost}</h6>
                     </div>
-                       <pre></pre>
+                       
                         
-                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="For Small plan Halls upto 2 are free above 2 you will be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have chosen the medium plan, up to  2 halls are inclusive and charged for more than 2 halls. "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>2</span>
                         <div className='col-6'><input type="range" value={customhall} min="2" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -421,9 +432,9 @@ function checkname(event){
                         <h6>Cost: ${customhallcost}</h6>
                         </div>
     
-                        <pre></pre>
+                      
                         
-                        <p>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content="Select no of custom booths "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                        <p>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content=" Pick the no. of custom booths you want!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" min="0" max="50" step="1" value={custombooth} onChange={customboothnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -443,10 +454,14 @@ function checkname(event){
                     <div id='step4'>
                     <div className="row step "><pre></pre>
                     <h3 className='fheading'>Step 4 : Select your Module <pre></pre></h3>
-                    <pre></pre>
+
                       
-                       <div className='col   '><pre></pre><pre></pre>
-                           <h5 >White Label ($250/event) <Tippy className='tippy' content="This is the cost for 1 event.For more and yearly subscription please talk to us"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+                       <div className='col   '><pre></pre>
+                           <h5 >White Label ($250/event) <Tippy className='tippy' content="Event URL - eventname.customerdomain.com 
+You have 2 options here 1)  Per event at $ 250 
+2) Talk to us One time purchase for a full year
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                            <p className='col'>
                            Showcase your brand! Create a white-label platform using your brand name, font, colours etc for an exclusive experience.
                            </p>
@@ -463,8 +478,9 @@ function checkname(event){
                             <h3 className='fheading'> Step 5: Landing/Event Microsite<pre></pre></h3><pre></pre>
                           
                                <div className='col-md-7'>
-                               <div className='row'><pre></pre><pre></pre>
-                            <p>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                               <div className='row'>
+                            <p>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="Pay $200 for each template!
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -476,22 +492,31 @@ function checkname(event){
     
                              <div className="  row step ">
                             <h3 className='fheading'>Step 6: 3D and 360° Walkthrus <pre></pre> </h3>
-                            <pre></pre><pre></pre><pre></pre>
-                            <div className='col-5 '><p>Branded Lobby Walkthrough ($300/event) <Tippy className='tippy' content="Depending on no of events 3D and 360° Walkthrus will be charged Max to 3 doors"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p></div>
-                     
-                    
-                        <div className='col '><input class="form-check-input" type="checkbox" value="" id="three" onChange={setthreenumber}></input>
+                            <pre></pre>
+                            <div className='col-md-7'><div className='row'>
+                            <p>Branded Lobby Walkthrough ($300/Walkthrus) <Tippy className='tippy' content="Branded walkthrus exterior or interior with your logo brand and pictures"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+                            <span className='col-1 zero'>0</span>
+                        <div className='col-6'><input type="range" value={three} min="0" max="50" step="1" onChange={setthreenumber}  class="form-range  " id="customRange1"/></div>
+                        <span className='col-1'>50</span>
+                        <div className='col-1'></div>
+                        <div className='col '>
+                        <input className='value inputbox'  type='number' value={three} min="0" max="50" step="1" onChange={setthreenumber} ></input>
                         <pre></pre>
                         <h6 className=''>Cost: ${threecost}</h6></div>
                              </div>
+                              </div></div>
+
+                            
     
     
     
-                             <div className="  row step ">
+                             <div className="  row  ">
                             <h3 className='fheading'>Step 7: Lobby<pre></pre></h3><pre></pre>
                             <div className='col-md-7'>
-                                <div className='row'><pre></pre><pre></pre>
-                            <p>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content=" You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </p>
+                                <div className='row'>
+                            <p>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content="For each template, you are payable for $200 only!
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -504,10 +529,10 @@ function checkname(event){
                             
                            <div id='step8'>
                              <div className="  row step ">
-                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3><pre></pre><pre></pre>
-                            <div className='col-md-7'><pre></pre>
+                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3><pre></pre>
+                            <div className='col-md-7'>
                                 <div className='row'>
-                            <p>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" You will be charged $200 per template"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></p>
+                            <p>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" For each template, you are payable for $200 only!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range"   value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>
@@ -518,12 +543,14 @@ function checkname(event){
                              </div></div></div>
     
     
-                             <div className="  row step ">
+                             <div className="  row ">
                             <h3 className='fheading'>Step 9: Engagement<pre></pre> </h3>
-                            <pre></pre><pre></pre>
+                            <pre></pre>
                             <div className='col-md-6'>
                                 <div className='row'>
-                            <p>Games with Leaderboard ($50/game) <Tippy className='tippy' content="For small plan games upto 1 are free above 1 you will be charged $50 "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                            <p>Games with Leaderboard ($50/game) <Tippy className='tippy' content="For Small plan,  1 game is inclusive and $50  for each game beyond that.
+
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                             
                             <span className='col-1 zero'>1</span>
                         <div className='col-6'><input type="range" value={games } min="1" max="50" step="1" onChange={gamesnumber}  class="form-range  " id="customRange1"/></div>
@@ -534,7 +561,8 @@ function checkname(event){
                         <h6>Cost: ${gamescost}</h6></div></div></div>
     
      <div className='col-md-6'><div className='row'>
-                   <p>Photo Booth ($100/month) <Tippy className='tippy' content="You will be charged $100 per month"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                   <p>Photo Booth ($100/month) <Tippy className='tippy' content="Photo Booth chargeable for $100 per month.
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={booth} min="0" max="10" step="1" onChange={boothnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>10</span>
@@ -548,11 +576,12 @@ function checkname(event){
     
                              <div className="  row step ">
                             <h3 className='fheading'>Step 10: Support  <pre></pre></h3>
-                            <pre></pre> <pre></pre>
+                            <pre></pre> 
                             <div className='col-md-7'>
                                 <div className='row'>
-                            <p>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support, 1st Event Free Tech Support 
-    Post 1st Event - Per hr $ 75"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </p>
+                            <p>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support available for $75 per month,
+Free tech support for first event!
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </p>
                         <span className='col-1 zero'>0</span>
                         <div className='col-6'><input type="range" value={hour} min="0" max="50" step="1" onChange={hournumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50 hours</span>
@@ -565,18 +594,328 @@ function checkname(event){
                              <pre></pre> <pre></pre> 
                              </div>
                    
-                   <div id='stepquotation' className='border' >
-                            <div className='totalcontainer'> <span className='total'>Total: ${total} </span><pre></pre>
+                   <div id='stepquotation'   >
+                            <div className='totalcontainer '> <span className='total'><img src={money} ></img>Total Cost: ${total} </span><pre></pre>
+                            <Table attend={attend} attendcost={attendcost} exhibitor={exhibitor} exhibitorcost={exhibitorcost} customhall={customhall} customhallcost={customhallcost} custombooth={custombooth} customboothcost={customboothcost} whitelabel={whitelabel} whitelabelcost={whitelabelcost} customlanding={customlanding} customlandingcost={customlandingcost} customlobby={customlobby} customlobbycost={customlobbycost} three={three} threecost={threecost} auditorium={auditorium} auditoriumcost={auditoriumcost} games={games} gamescost={gamescost} booth={booth} boothcost={boothcost} hour={hour} hourcost={hourcost} total={total} plantype={plantype} plancost={plancost}/>
                              <h5 id='message'>Great,You are eligible for Small Plan!</h5>
+                            
                             <pre></pre>
-                             <button id='buttn' className='qotationbutton' onClick={getqotform}>Get My Quotation</button>
+                             <button id='buttn' className='qotationbutton' onClick={getqotform}>Download Quotation</button>
                              <div id='spiner' class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-                </div></div>
-                <div className='d-flex navigation_buttons'><button id='previous' onClick={previousfunction}>Previous</button> <button id='next' onClick={nextfunction}>Next</button></div>
+                </div>
                
-                <pre></pre> <pre></pre> <pre></pre>
+                
+                <div className='row '>    <div className='col'> </div>
+<div id='qotform' className='col-md-5 '>
+<form class="row g-3">
+<div class="col-12">
+    <label for="inputCity"  class="form-label" >Full name <span style={{color:"red"}}>*</span></label>
+    <input id='inputcity'  onInput={checkname ,getname} type="text" class="form-control"   placeholder='Enter Full Name' required />
+  </div>
+  <div className='col-12'> </div>
+  
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email <span style={{color:"red"}}>*</span></label>
+    <input type="email" onInput={checkname ,getemail}  class="form-control" id="inputemail" placeholder='Enter Your Email' />
+  </div>
+  
+  <div class="col-md-6">
+    <label  class="form-label">Company Name </label>
+    <input type="text" class="form-control" required  placeholder='Company Name' />
+  </div>
+  
+  
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Contact Number <span style={{color:"red"}}>*</span></label>
+    <input  onInput={checkname} type="tel"   class="form-control" required placeholder='Contact Number ' id="inputmobile" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Country </label>
+    <div class="input-group mb-3">
+  <select id='selectform'  onChange={India} class="form-select" >
+    <option selected>Select Country</option>
+    <option value="AF">Afghanistan</option>
+    <option value="AX">Aland Islands</option>
+    <option value="AL">Albania</option>
+    <option value="DZ">Algeria</option>
+    <option value="AS">American Samoa</option>
+    <option value="AD">Andorra</option>
+    <option value="AO">Angola</option>
+    <option value="AI">Anguilla</option>
+    <option value="AQ">Antarctica</option>
+    <option value="AG">Antigua and Barbuda</option>
+    <option value="AR">Argentina</option>
+    <option value="AM">Armenia</option>
+    <option value="AW">Aruba</option>
+    <option value="AU">Australia</option>
+    <option value="AT">Austria</option>
+    <option value="AZ">Azerbaijan</option>
+    <option value="BS">Bahamas</option>
+    <option value="BH">Bahrain</option>
+    <option value="BD">Bangladesh</option>
+    <option value="BB">Barbados</option>
+    <option value="BY">Belarus</option>
+    <option value="BE">Belgium</option>
+    <option value="BZ">Belize</option>
+    <option value="BJ">Benin</option>
+    <option value="BM">Bermuda</option>
+    <option value="BT">Bhutan</option>
+    <option value="BO">Bolivia</option>
+    <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+    <option value="BA">Bosnia and Herzegovina</option>
+    <option value="BW">Botswana</option>
+    <option value="BV">Bouvet Island</option>
+    <option value="BR">Brazil</option>
+    <option value="IO">British Indian Ocean Territory</option>
+    <option value="BN">Brunei Darussalam</option>
+    <option value="BG">Bulgaria</option>
+    <option value="BF">Burkina Faso</option>
+    <option value="BI">Burundi</option>
+    <option value="KH">Cambodia</option>
+    <option value="CM">Cameroon</option>
+    <option value="CA">Canada</option>
+    <option value="CV">Cape Verde</option>
+    <option value="KY">Cayman Islands</option>
+    <option value="CF">Central African Republic</option>
+    <option value="TD">Chad</option>
+    <option value="CL">Chile</option>
+    <option value="CN">China</option>
+    <option value="CX">Christmas Island</option>
+    <option value="CC">Cocos (Keeling) Islands</option>
+    <option value="CO">Colombia</option>
+    <option value="KM">Comoros</option>
+    <option value="CG">Congo</option>
+    <option value="CD">Congo, Democratic Republic of the Congo</option>
+    <option value="CK">Cook Islands</option>
+    <option value="CR">Costa Rica</option>
+    <option value="CI">Cote D'Ivoire</option>
+    <option value="HR">Croatia</option>
+    <option value="CU">Cuba</option>
+    <option value="CW">Curacao</option>
+    <option value="CY">Cyprus</option>
+    <option value="CZ">Czech Republic</option>
+    <option value="DK">Denmark</option>
+    <option value="DJ">Djibouti</option>
+    <option value="DM">Dominica</option>
+    <option value="DO">Dominican Republic</option>
+    <option value="EC">Ecuador</option>
+    <option value="EG">Egypt</option>
+    <option value="SV">El Salvador</option>
+    <option value="GQ">Equatorial Guinea</option>
+    <option value="ER">Eritrea</option>
+    <option value="EE">Estonia</option>
+    <option value="ET">Ethiopia</option>
+    <option value="FK">Falkland Islands (Malvinas)</option>
+    <option value="FO">Faroe Islands</option>
+    <option value="FJ">Fiji</option>
+    <option value="FI">Finland</option>
+    <option value="FR">France</option>
+    <option value="GF">French Guiana</option>
+    <option value="PF">French Polynesia</option>
+    <option value="TF">French Southern Territories</option>
+    <option value="GA">Gabon</option>
+    <option value="GM">Gambia</option>
+    <option value="GE">Georgia</option>
+    <option value="DE">Germany</option>
+    <option value="GH">Ghana</option>
+    <option value="GI">Gibraltar</option>
+    <option value="GR">Greece</option>
+    <option value="GL">Greenland</option>
+    <option value="GD">Grenada</option>
+    <option value="GP">Guadeloupe</option>
+    <option value="GU">Guam</option>
+    <option value="GT">Guatemala</option>
+    <option value="GG">Guernsey</option>
+    <option value="GN">Guinea</option>
+    <option value="GW">Guinea-Bissau</option>
+    <option value="GY">Guyana</option>
+    <option value="HT">Haiti</option>
+    <option value="HM">Heard Island and Mcdonald Islands</option>
+    <option value="VA">Holy See (Vatican City State)</option>
+    <option value="HN">Honduras</option>
+    <option value="HK">Hong Kong</option>
+    <option value="HU">Hungary</option>
+    <option value="IS">Iceland</option>
+    <option  id='India' value="IN">India</option>
+    <option value="ID">Indonesia</option>
+    <option value="IR">Iran, Islamic Republic of</option>
+    <option value="IQ">Iraq</option>
+    <option value="IE">Ireland</option>
+    <option value="IM">Isle of Man</option>
+    <option value="IL">Israel</option>
+    <option value="IT">Italy</option>
+    <option value="JM">Jamaica</option>
+    <option value="JP">Japan</option>
+    <option value="JE">Jersey</option>
+    <option value="JO">Jordan</option>
+    <option value="KZ">Kazakhstan</option>
+    <option value="KE">Kenya</option>
+    <option value="KI">Kiribati</option>
+    <option value="KP">Korea, Democratic People's Republic of</option>
+    <option value="KR">Korea, Republic of</option>
+    <option value="XK">Kosovo</option>
+    <option value="KW">Kuwait</option>
+    <option value="KG">Kyrgyzstan</option>
+    <option value="LA">Lao People's Democratic Republic</option>
+    <option value="LV">Latvia</option>
+    <option value="LB">Lebanon</option>
+    <option value="LS">Lesotho</option>
+    <option value="LR">Liberia</option>
+    <option value="LY">Libyan Arab Jamahiriya</option>
+    <option value="LI">Liechtenstein</option>
+    <option value="LT">Lithuania</option>
+    <option value="LU">Luxembourg</option>
+    <option value="MO">Macao</option>
+    <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+    <option value="MG">Madagascar</option>
+    <option value="MW">Malawi</option>
+    <option value="MY">Malaysia</option>
+    <option value="MV">Maldives</option>
+    <option value="ML">Mali</option>
+    <option value="MT">Malta</option>
+    <option value="MH">Marshall Islands</option>
+    <option value="MQ">Martinique</option>
+    <option value="MR">Mauritania</option>
+    <option value="MU">Mauritius</option>
+    <option value="YT">Mayotte</option>
+    <option value="MX">Mexico</option>
+    <option value="FM">Micronesia, Federated States of</option>
+    <option value="MD">Moldova, Republic of</option>
+    <option value="MC">Monaco</option>
+    <option value="MN">Mongolia</option>
+    <option value="ME">Montenegro</option>
+    <option value="MS">Montserrat</option>
+    <option value="MA">Morocco</option>
+    <option value="MZ">Mozambique</option>
+    <option value="MM">Myanmar</option>
+    <option value="NA">Namibia</option>
+    <option value="NR">Nauru</option>
+    <option value="NP">Nepal</option>
+    <option value="NL">Netherlands</option>
+    <option value="AN">Netherlands Antilles</option>
+    <option value="NC">New Caledonia</option>
+    <option value="NZ">New Zealand</option>
+    <option value="NI">Nicaragua</option>
+    <option value="NE">Niger</option>
+    <option value="NG">Nigeria</option>
+    <option value="NU">Niue</option>
+    <option value="NF">Norfolk Island</option>
+    <option value="MP">Northern Mariana Islands</option>
+    <option value="NO">Norway</option>
+    <option value="OM">Oman</option>
+    <option value="PK">Pakistan</option>
+    <option value="PW">Palau</option>
+    <option value="PS">Palestinian Territory, Occupied</option>
+    <option value="PA">Panama</option>
+    <option value="PG">Papua New Guinea</option>
+    <option value="PY">Paraguay</option>
+    <option value="PE">Peru</option>
+    <option value="PH">Philippines</option>
+    <option value="PN">Pitcairn</option>
+    <option value="PL">Poland</option>
+    <option value="PT">Portugal</option>
+    <option value="PR">Puerto Rico</option>
+    <option value="QA">Qatar</option>
+    <option value="RE">Reunion</option>
+    <option value="RO">Romania</option>
+    <option value="RU">Russian Federation</option>
+    <option value="RW">Rwanda</option>
+    <option value="BL">Saint Barthelemy</option>
+    <option value="SH">Saint Helena</option>
+    <option value="KN">Saint Kitts and Nevis</option>
+    <option value="LC">Saint Lucia</option>
+    <option value="MF">Saint Martin</option>
+    <option value="PM">Saint Pierre and Miquelon</option>
+    <option value="VC">Saint Vincent and the Grenadines</option>
+    <option value="WS">Samoa</option>
+    <option value="SM">San Marino</option>
+    <option value="ST">Sao Tome and Principe</option>
+    <option value="SA">Saudi Arabia</option>
+    <option value="SN">Senegal</option>
+    <option value="RS">Serbia</option>
+    <option value="CS">Serbia and Montenegro</option>
+    <option value="SC">Seychelles</option>
+    <option value="SL">Sierra Leone</option>
+    <option value="SG">Singapore</option>
+    <option value="SX">Sint Maarten</option>
+    <option value="SK">Slovakia</option>
+    <option value="SI">Slovenia</option>
+    <option value="SB">Solomon Islands</option>
+    <option value="SO">Somalia</option>
+    <option value="ZA">South Africa</option>
+    <option value="GS">South Georgia and the South Sandwich Islands</option>
+    <option value="SS">South Sudan</option>
+    <option value="ES">Spain</option>
+    <option value="LK">Sri Lanka</option>
+    <option value="SD">Sudan</option>
+    <option value="SR">Suriname</option>
+    <option value="SJ">Svalbard and Jan Mayen</option>
+    <option value="SZ">Swaziland</option>
+    <option value="SE">Sweden</option>
+    <option value="CH">Switzerland</option>
+    <option value="SY">Syrian Arab Republic</option>
+    <option value="TW">Taiwan, Province of China</option>
+    <option value="TJ">Tajikistan</option>
+    <option value="TZ">Tanzania, United Republic of</option>
+    <option value="TH">Thailand</option>
+    <option value="TL">Timor-Leste</option>
+    <option value="TG">Togo</option>
+    <option value="TK">Tokelau</option>
+    <option value="TO">Tonga</option>
+    <option value="TT">Trinidad and Tobago</option>
+    <option value="TN">Tunisia</option>
+    <option value="TR">Turkey</option>
+    <option value="TM">Turkmenistan</option>
+    <option value="TC">Turks and Caicos Islands</option>
+    <option value="TV">Tuvalu</option>
+    <option value="UG">Uganda</option>
+    <option value="UA">Ukraine</option>
+    <option value="AE">United Arab Emirates</option>
+    <option value="GB">United Kingdom</option>
+    <option value="US">United States</option>
+    <option value="UM">United States Minor Outlying Islands</option>
+    <option value="UY">Uruguay</option>
+    <option value="UZ">Uzbekistan</option>
+    <option value="VU">Vanuatu</option>
+    <option value="VE">Venezuela</option>
+    <option value="VN">Viet Nam</option>
+    <option value="VG">Virgin Islands, British</option>
+    <option value="VI">Virgin Islands, U.s.</option>
+    <option value="WF">Wallis and Futuna</option>
+    <option value="EH">Western Sahara</option>
+    <option value="YE">Yemen</option>
+    <option value="ZM">Zambia</option>
+    <option value="ZW">Zimbabwe</option>
+  </select>
+  
+</div>
+  </div>
+  <div className='col-12'></div>
+  <div id='gstnumber' class="col-12">
+    <label for="gstin" class="form-label">GSTIN  </label>
+    <input onInput={gstnumber} type="text" class="form-control" id="gstin" />
+  </div>
+  <div className='col-12'>
+
+  </div>
+  <div class="col-12">
+  <button type='submit' disabled={disable} id='buttn2' className='qotationbuttonmini' onClick={pdfDownload} >Submit</button>
+  </div>
+  
+</form>
+
+</div>
+<div className='col'></div></div>
+                
+                
+                </div>
+                <div className='d-flex navigation_buttons '><button id='previous' className='navigationbuttons' onClick={previousfunction}>Previous</button> <button id='next' className='navigationbuttons' onClick={nextfunction}>Next</button>
+                
+                </div>
+   
+              
                 
                  
                 <div id='qotation' className='row   invoice2 '>
@@ -677,50 +1016,7 @@ function checkname(event){
                </div>
  
                
-        <div className='row'>    <div className='col'> </div>
-<div id='qotform' className='col-md-5 '>
-<form class="row g-3">
-<div class="col-12">
-    <label for="inputCity"  class="form-label" >Full name <span style={{color:"red"}}>*</span></label>
-    <input id='inputcity'  onInput={checkname ,getname} type="text" class="form-control"   placeholder='Enter Full Name' required />
-  </div>
-  <div className='col-12'> </div>
-  
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email <span style={{color:"red"}}>*</span></label>
-    <input type="email" onInput={checkname ,getemail}  class="form-control" id="inputemail" placeholder='Enter Your Email' />
-  </div>
-  
-  <div class="col-md-6">
-    <label  class="form-label">Company Name </label>
-    <input type="text" class="form-control" required  placeholder='Company Name' />
-  </div>
-  
-  
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">Contact Number <span style={{color:"red"}}>*</span></label>
-    <input  onInput={checkname} type="tel"   class="form-control" required placeholder='Contact Number ' id="inputmobile" />
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">Country </label>
-    <input type="text" class="form-control"  required placeholder='Country' id="inputCity" />
-  </div>
-  <div className='col-12'></div>
-  <div class="col-12">
-    <label for="gstin" class="form-label">GSTIN (if nationality Indian) </label>
-    <input onInput={gstnumber} type="text" class="form-control" id="gstin" />
-  </div>
-  <div className='col-12'>
-
-  </div>
-  <div class="col-12">
-  <button type='submit' disabled={disable} id='buttn2' className='qotationbuttonmini' onClick={pdfDownload} >Get My Quotation</button>
-  </div>
-  
-</form>
-
-</div>
-<div className='col'></div></div>
+       
 <pre></pre><pre></pre><pre></pre><pre></pre>
 </div>    
                 

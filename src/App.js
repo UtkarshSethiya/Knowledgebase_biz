@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/header';
 import Request from './components/request';
 import Calculator from './components/calculator';
-import Home from './components/home';
+
 import Footer from './components/footer';
 import Medium from './components/calculator_medium';
 import Small from './components/calculator_small';
@@ -33,9 +33,9 @@ function App() {
 <ScrollToTop>
 <Routes>
 <Route path="request"  element={<Request/>}  />
-      <Route path="home"  element={<Homepage/>}  />
+      <Route path="home"  element={<Calculator/>}  />
       <Route path="calculator" element={<Calculator />} />
-      <Route path="/"  element={<Homepage/>}  />
+      <Route path="/"  element={<Calculator/>}  />
      <Route path="calculator/medium"  element={<Medium/>}  />
      <Route path="calculator/small"  element={<Small/>}  />
      <Route path="calculator/custom"  element={<Custom/>}  />
