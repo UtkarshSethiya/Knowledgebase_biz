@@ -69,7 +69,7 @@ function Pricing(){
 
   
 
-      <div class="d-flex px-lg-5 mx-lg-5 py-lg-3 ">
+      <div class="d-flex px-lg-5 mx-lg-5 py-lg-3 flex-wrap ">
         <div class="card  images-container-1 ">
           <img src={feature1} class="card-img-top image-1 cardfirst" alt="Features" />
           <div class="card-body py-2">

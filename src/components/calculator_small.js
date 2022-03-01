@@ -422,7 +422,7 @@ function checkname(event){
                     </div>
                        
                         
-                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have chosen the medium plan, up to  2 halls are inclusive and charged for more than 2 halls. "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have chosen the Small plan, up to  2 halls are inclusive and charged for more than 2 halls. "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
                         <span className='col-1 zero'>2</span>
                         <div className='col-6'><input type="range" value={customhall} min="2" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/></div>
                         <span className='col-1'>50</span>

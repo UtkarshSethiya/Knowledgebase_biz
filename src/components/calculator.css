@@ -28,6 +28,7 @@ p{
 }
 #previous{
     visibility: hidden;
+   
 }
 #gstnumber{
     display: none;
@@ -260,10 +261,15 @@ font-weight: 600 !important;
 font-size: 35px;
 padding: 6px;
 }
+body{
+    overflow-x: hidden;
+}
 @media  screen and  ( max-width:800px){
     .calimage{
         width: 300px;
+        height: 300px;
     }
+   
 }
 
 
