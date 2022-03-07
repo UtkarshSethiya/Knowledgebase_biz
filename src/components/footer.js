@@ -14,8 +14,8 @@ function Footer(){
 return( 
     
     <div className="social  "  >
-     
-     <p className='powered text-center'>Powered by Biz Connect</p> 
+     <div><p className='powered text-center'>Powered by Biz Connect</p> </div>
+    
 </div>
    
    

@@ -32,7 +32,8 @@ function Small(){
 
 
 
-    function India(){
+    function India(e){
+      setcountry(e.target.selectedOptions[0].text)
       let india = document.getElementById('selectform');
      if(india.value=='IN'){
      document.getElementById('gstnumber').style.display='block'
@@ -283,46 +284,25 @@ const[disable,setdisable]=useState(true);
 const[fullname,setfullname]=useState();
 const[gst,setgst]=useState();
 const[mail,setemail]=useState();
-
-
+const[country,setcountry]=useState();
+    
+    
+    function gstnumber(event){
+      setgst(event.target.value)
+    }
+    function getemail(event)
+    {
+      setemail(event.target.value);
+    }
+ function getname(event){
+  setfullname(event.target.value)
+ }
+    
 function gstnumber(event){
   setgst(event.target.value)
 }
-function getemail(event){
-  setemail(event.target.value)
-}
 
 
-function getname(event){
-  setfullname(event.target.value)
-}
-
-function checkname(event){
-  let myinput=  document.getElementById('inputcity');
-  let mymobile=  document.getElementById('inputmobile');
-  let mymail=  document.getElementById('inputemail');
-
-  if(myinput && myinput.value){
-      setdisable(false)
-    document.getElementById('buttn2').style.opacity='1';
-  }
-
- 
-  
-  if(mymail && mymail.value){
-    setdisable(false)
-    document.getElementById('buttn2').style.opacity='1';
-  }
-  if (mymobile && mymobile.value){
-    setdisable(false)
-  document.getElementById('buttn2').style.opacity='1';
-}
-
-  else {
-    setdisable(true);
-    document.getElementById('buttn2').style.opacity='0.2'
-  }
-}
 
 /*IN WORDS NUMBER*/
 
@@ -373,14 +353,14 @@ function checkname(event){
               
                
                 <div id='step3'>
-                <div className=''><Link to='/calculator' className='back '><i class="bi bi-arrow-left-square"></i></Link></div>
-                   <pre></pre> <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
+                <div className=''></div>
+                    <h3 className='fheading'>Step 3 : Select your volume <pre></pre> </h3>
                     <div className='row  '>
-                <div className="col-md-7   ">
+                <div className="col-md-7  colon ">
                     
                    
-                    <pre></pre>
-                    <h5 >Attendees Volume <Tippy className='tippy' content="Choose the number of attendees for the event!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
+                  
+                    <h5 className='subheading' >Attendees Volume <Tippy className='tippy' content="Choose the number of attendees for the event!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
                    
                   
                    
@@ -388,10 +368,17 @@ function checkname(event){
                     
                     <div className=" row  ">
                             
-                            <p>Define the volume of attendees per month for all your events <Tippy className='tippy' content="For Small Plan Attendes upto 200 are free beyond that, every additional 1-25 users $20 wil be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
-                        <span className='col-1 zero'>200</span>
-                        <div className='col-6'><input type="range" min="200" max="500" step="25" value={attend}  onChange={attendenumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1 '>500</span>
+                            <label className='form-label'>Define the volume of attendees per month for all your events <Tippy className='tippy' content="For Small Plan Attendes upto 200 are free beyond that, every additional 1-25 users $20 wil be charged "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </label>
+                      
+                        <div className='col-6'><input type="range" min="200" max="500" step="25" value={attend}  onChange={attendenumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>200</div>
+                         
+                         <div className=' num text-end '>500</div>
+                         </div>
+                         </div> </div>
                        <div className='col-1'></div>
                         <div className='col '>
                         <input className=' inputbox value' id='attend'  type='number'min="200" max="500" step="25" value={attend}  onChange={attendenumber} ></input><pre></pre>
@@ -403,18 +390,27 @@ function checkname(event){
 
                      
                     <div className="row    ">
-                   <div className='col-md-7'>
-                    <h5>Exhibitors Volume </h5>
+                   <div className='col-md-7 colon'>
+                    <h5 className='subheading'>Exhibitors Volume </h5>
                     <div className='col-12'>
-                     <pre></pre>
-                     <p>Extra Booth($100/booth) <Tippy className='tippy' content="As you have chosen the Small plan, up to 3 booths are inclusive, you can pay if you need more 
+                   
+                     <label className='form-label'>Extra Booth($100/booth) <Tippy className='tippy' content="As you have chosen the Small plan, up to 3 booths are inclusive, you can pay if you need more 
 
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </label>
                        <div className='row'>
                       
-                        <div className='col-1  zero'>3</div>
-                        <div className='col-6'><input type="range" min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>100</span>
+                        
+                        <div className='col-6'><input type="range" min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>3</div>
+                         
+                         <div className=' num text-end '>100</div>
+                         </div>
+                         </div> 
+                        </div>
+                      
                         <div className='col-1'></div>
                         <div className='col'>
                         <input id='exhibitor'  type='number' className='value inputbox'  min="3" max="100" step="1" value={exhibitor} onChange={exhibitornumber} ></input><pre></pre>
@@ -422,22 +418,40 @@ function checkname(event){
                     </div>
                        
                         
-                        <p>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have chosen the Small plan, up to  2 halls are inclusive and charged for more than 2 halls. "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
-                        <span className='col-1 zero'>2</span>
-                        <div className='col-6'><input type="range" value={customhall} min="2" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                        <label className='form-label'>Buy Custom Hall Template ($100/hall) <Tippy className='tippy' content="As you have chosen the Small plan, up to  2 halls are inclusive and charged for more than 2 halls. "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </label>
+                       
+                        <div className='col-6'><input type="range" value={customhall} min="2" max="50" step="1" onChange={customhallnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>3</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                    
                         <div className='col-1'></div>
                         <div className='col'>
                         <input id='customhall'  type='number' className='value inputbox' min="2" max="50" step="1" value={customhall}  onChange={customhallnumber} ></input><pre></pre>
                         <h6>Cost: ${customhallcost}</h6>
                         </div>
-    
+                      
                       
                         
-                        <p>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content=" Pick the no. of custom booths you want!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" min="0" max="50" step="1" value={custombooth} onChange={customboothnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                        <label className='form-label'>Buy Custom Booth Template ($100/template)  <Tippy className='tippy' content=" Pick the no. of custom booths you want!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </label>
+                 
+                        <div className='col-6'><input type="range" min="0" max="50" step="1" value={custombooth} onChange={customboothnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>3</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                       
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox'  type='number'  value={custombooth} min="0" max="50" step="1" onChange={customboothnumber}   ></input><pre></pre>
@@ -452,19 +466,19 @@ function checkname(event){
                     </div>
                     </div>
                     <div id='step4'>
-                    <div className="row step "><pre></pre>
+                    <div className="row "><pre></pre>
                     <h3 className='fheading'>Step 4 : Select your Module <pre></pre></h3>
 
                       
-                       <div className='col   '><pre></pre>
-                           <h5 >White Label ($250/event) <Tippy className='tippy' content="Event URL - eventname.customerdomain.com 
+                       <div className='col-7  colon '>
+                           <h5 className='subheading' >White Label ($250/event) <Tippy className='tippy' content="Event URL - eventname.customerdomain.com 
 You have 2 options here 1)  Per event at $ 250 
 2) Talk to us One time purchase for a full year
 
 "><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
-                           <p className='col'>
+                           <label  className='form-label'>
                            Showcase your brand! Create a white-label platform using your brand name, font, colours etc for an exclusive experience.
-                           </p>
+                           </label>
                           
                        </div>
                       <div className='col-3'><input class="form-check-input whitelabelcheck" type="checkbox" value="" id="flexCheckChecked" onChange={whitelabelnumber}></input><pre></pre>  <h6>Cost: ${ whitelabelcost}</h6>
@@ -474,30 +488,48 @@ You have 2 options here 1)  Per event at $ 250
                        
                         </div>
     
-                        <div className="   row step ">
-                            <h3 className='fheading'> Step 5: Landing/Event Microsite<pre></pre></h3><pre></pre>
+                        <div className="   row  ">
+                            <h3 className='fheading'> Step 5: Landing/Event Microsite<pre></pre></h3>
                           
-                               <div className='col-md-7'>
+                               <div className='col-md-7 colon'>
                                <div className='row'>
-                            <p>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="Pay $200 for each template!
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                            <label className='form-label'>Buy Custom Landing Template ($200/template) <Tippy className='tippy' content="Pay $200 for each template!
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </label>
+                        
+                        <div className='col-6'><input type="range" value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                      
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox'  type='number' value={customlanding} min="0" max="50" step="1" onChange={customlandingnumber} ></input><pre></pre>
                         <h6>Cost: ${customlandingcost}</h6></div></div>
                              </div></div>
     
-                             <div className="  row step ">
+                             <div className="  row  ">
                             <h3 className='fheading'>Step 6: 3D and 360° Walkthrus <pre></pre> </h3>
-                            <pre></pre>
-                            <div className='col-md-7'><div className='row'>
-                            <p>Branded Lobby Walkthrough ($300/Walkthrus) <Tippy className='tippy' content="Branded walkthrus exterior or interior with your logo brand and pictures"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </p>
-                            <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" value={three} min="0" max="50" step="1" onChange={setthreenumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                          
+                            <div className='col-md-7 colon'><div className='row'>
+                            <label className='form-label'>Branded Lobby Walkthrough ($300/Walkthrus) <Tippy className='tippy' content="Branded walkthrus exterior or interior with your logo brand and pictures"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </label>
+                    
+                        <div className='col-6'><input type="range" value={three} min="0" max="50" step="1" onChange={setthreenumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                       
                         <div className='col-1'></div>
                         <div className='col '>
                         <input className='value inputbox'  type='number' value={three} min="0" max="50" step="1" onChange={setthreenumber} ></input>
@@ -511,15 +543,23 @@ You have 2 options here 1)  Per event at $ 250
     
     
                              <div className="  row  ">
-                            <h3 className='fheading'>Step 7: Lobby<pre></pre></h3><pre></pre>
-                            <div className='col-md-7'>
+                            <h3 className='fheading'>Step 7: Lobby<pre></pre></h3>
+                            <div className='col-md-7 colon'>
                                 <div className='row'>
-                            <p>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content="For each template, you are payable for $200 only!
+                            <label className='form-label'>Buy Custom Lobby Template ($200/template) <Tippy className='tippy' content="For each template, you are payable for $200 only!
 
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>   </label>
+                        
+                        <div className='col-6'><input type="range" value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox'  type='number' value={customlobby} min="0" max="50" step="1" onChange={customlobbynumber}  ></input><pre></pre>
@@ -528,14 +568,23 @@ You have 2 options here 1)  Per event at $ 250
                              </div>
                             
                            <div id='step8'>
-                             <div className="  row step ">
-                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3><pre></pre>
-                            <div className='col-md-7'>
+                             <div className="  row  ">
+                            <h3 className='fheading'>Step 8: Auditorium<pre></pre> </h3>
+                            <div className='col-md-6 colon'>
                                 <div className='row'>
-                            <p>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" For each template, you are payable for $200 only!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range"   value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                            <label className='form-label'>Buy Custom Auditorium Template ($200/template) <Tippy className='tippy' content=" For each template, you are payable for $200 only!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></label>
+                     
+                        <div className='col-6'><input type="range"   value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                  
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox'  type='number' value={auditorium} min="0" max="50" step="1" onChange={auditoriumnumber} ></input><pre></pre>
@@ -545,27 +594,45 @@ You have 2 options here 1)  Per event at $ 250
     
                              <div className="  row ">
                             <h3 className='fheading'>Step 9: Engagement<pre></pre> </h3>
-                            <pre></pre>
-                            <div className='col-md-6'>
+       
+                            <div className='col-md-6 colon'>
                                 <div className='row'>
-                            <p>Games with Leaderboard ($50/game) <Tippy className='tippy' content="For Small plan,  1 game is inclusive and $50  for each game beyond that.
+                            <label className='form-label'>Games with Leaderboard ($50/game) <Tippy className='tippy' content="For Small plan,  1 game is inclusive and $50  for each game beyond that.
 
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </label>
                             
-                            <span className='col-1 zero'>1</span>
-                        <div className='col-6'><input type="range" value={games } min="1" max="50" step="1" onChange={gamesnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50</span>
+                            
+                        <div className='col-6'><input type="range" value={games } min="1" max="50" step="1" onChange={gamesnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>1</div>
+                         
+                         <div className=' num text-end '>50</div>
+                         </div>
+                         </div> 
+                        </div>
+                     
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox' id='game'  type='number' value={games } min="1" max="50" step="1" onChange={gamesnumber} ></input><pre></pre>
                         <h6>Cost: ${gamescost}</h6></div></div></div>
     
-     <div className='col-md-6'><div className='row'>
-                   <p>Photo Booth ($100/month) <Tippy className='tippy' content="Photo Booth chargeable for $100 per month.
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" value={booth} min="0" max="10" step="1" onChange={boothnumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>10</span>
+     <div className='col-md'><div className='row'>
+                   <label className='form-label'>Photo Booth ($100/month) <Tippy className='tippy' content="Photo Booth chargeable for $100 per month.
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>  </label>
+               
+                        <div className='col-6'><input type="range" value={booth} min="0" max="10" step="1" onChange={boothnumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>10</div>
+                         </div>
+                         </div> 
+                        </div>
+                  
                        <div className='col-1'></div>
                         <div className='col'>
                         <input className='value  inputbox'  type='number' value={booth} min="0" max="10" step="1" onChange={boothnumber}  ></input><pre></pre>
@@ -574,30 +641,40 @@ You have 2 options here 1)  Per event at $ 250
                              </div></div></div>
     
     
-                             <div className="  row step ">
+                             <div className="  row  ">
                             <h3 className='fheading'>Step 10: Support  <pre></pre></h3>
-                            <pre></pre> 
-                            <div className='col-md-7'>
+                             
+                            <div className='col-md-6 colon'>
                                 <div className='row'>
-                            <p>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support available for $75 per month,
+                            <label className='form-label'>Onboarding Executive (Tech support $75/hour) <Tippy className='tippy' content=" Tech Support available for $75 per month,
 Free tech support for first event!
-"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </p>
-                        <span className='col-1 zero'>0</span>
-                        <div className='col-6'><input type="range" value={hour} min="0" max="50" step="1" onChange={hournumber}  class="form-range  " id="customRange1"/></div>
-                        <span className='col-1'>50 hours</span>
+"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy>     </label>
+                     
+                        <div className='col-6'><input type="range" value={hour} min="0" max="50" step="1" onChange={hournumber}  class="form-range  " id="customRange1"/>
+                        <div className='row'>
+                         
+                         <div className='col-12  d-flex justify-content-between '>
+                         <div className=' num  text-start '>0</div>
+                         
+                         <div className=' num text-end '>50 hours</div>
+                         </div>
+                         </div> 
+                        </div>
+                       
                         <div className='col-1'></div>
                         <div className='col'>
                         <input className='value inputbox' type='number' value={hour}min="0" max="50" step="1" onChange={hournumber}  ></input><pre></pre>
                         <h6>Cost: ${hourcost}</h6></div></div>
                              </div></div>
                          
-                             <pre></pre> <pre></pre> 
+                          
                              </div>
                    
                    <div id='stepquotation'   >
                             <div className='totalcontainer '> <span className='total'><img src={money} ></img>Total Cost: ${total} </span><pre></pre>
                             <Table attend={attend} attendcost={attendcost} exhibitor={exhibitor} exhibitorcost={exhibitorcost} customhall={customhall} customhallcost={customhallcost} custombooth={custombooth} customboothcost={customboothcost} whitelabel={whitelabel} whitelabelcost={whitelabelcost} customlanding={customlanding} customlandingcost={customlandingcost} customlobby={customlobby} customlobbycost={customlobbycost} three={three} threecost={threecost} auditorium={auditorium} auditoriumcost={auditoriumcost} games={games} gamescost={gamescost} booth={booth} boothcost={boothcost} hour={hour} hourcost={hourcost} total={total} plantype={plantype} plancost={plancost}/>
-                             <h5 id='message'>Great,You are eligible for Small Plan!</h5>
+                           
+                           <h5  id='message'>Great,You are eligible for Small Plan!</h5>
                             
                             <pre></pre>
                              <button id='buttn' className='qotationbutton' onClick={getqotform}>Download Quotation</button>
@@ -608,34 +685,34 @@ Free tech support for first event!
                
                 
                 <div className='row '>    <div className='col'> </div>
-<div id='qotform' className='col-md-5 '>
-<form class="row g-3">
+                <div id='qotform' className='col-md-5 '>
+<form class="row g-3" onSubmit={pdfDownload}>
 <div class="col-12">
-    <label for="inputCity"  class="form-label" >Full name <span style={{color:"red"}}>*</span></label>
-    <input id='inputcity'  onInput={checkname ,getname} type="text" class="form-control"   placeholder='Enter Full Name' required />
+    <label for="inputName"  class="form-label" >Full name <span style={{color:"red"}}>*</span></label>
+    <input id='inputname' onChange={getname}  type="text" class="form-control"   placeholder='Enter Full Name' required />
   </div>
   <div className='col-12'> </div>
   
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email <span style={{color:"red"}}>*</span></label>
-    <input type="email" onInput={checkname ,getemail}  class="form-control" id="inputemail" placeholder='Enter Your Email' />
+    <input type="email" onInput={getemail } required  class="form-control" id="inputemail" placeholder='Enter Your Email' />
   </div>
   
   <div class="col-md-6">
     <label  class="form-label">Company Name </label>
-    <input type="text" class="form-control" required  placeholder='Company Name' />
+    <input type="text" class="form-control"   placeholder='Company Name' />
   </div>
   
   
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Contact Number <span style={{color:"red"}}>*</span></label>
-    <input  onInput={checkname} type="tel"   class="form-control" required placeholder='Contact Number ' id="inputmobile" />
+    <input   type="tel"  class="form-control" required placeholder='Contact Number ' id="inputmobile" />
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Country </label>
+    <label for="inputCity" class="form-label">Country <span style={{color:"red"}}>*</span></label>
     <div class="input-group mb-3">
-  <select id='selectform'  onChange={India} class="form-select" >
-    <option selected>Select Country</option>
+  <select id='selectform' onInput={India}  required   class="form-select" >
+    <option placeholder='Select Country' selected></option>
     <option value="AF">Afghanistan</option>
     <option value="AX">Aland Islands</option>
     <option value="AL">Albania</option>
@@ -894,18 +971,17 @@ Free tech support for first event!
   </div>
   <div className='col-12'></div>
   <div id='gstnumber' class="col-12">
-    <label for="gstin" class="form-label">GSTIN  </label>
+    <label for="gstin"  class="form-label">GSTIN  </label>
     <input onInput={gstnumber} type="text" class="form-control" id="gstin" />
   </div>
   <div className='col-12'>
 
   </div>
   <div class="col-12">
-  <button type='submit' disabled={disable} id='buttn2' className='qotationbuttonmini' onClick={pdfDownload} >Submit</button>
+  <button type='submit'  id='buttn2' className='qotationbuttonmini'  >Submit</button>
   </div>
   
 </form>
-
 </div>
 <div className='col'></div></div>
                 
@@ -918,40 +994,41 @@ Free tech support for first event!
               
                 
                  
-                <div id='qotation' className='row   invoice2 '>
-                   
+              
+                <div id='qotation' className='  invoice2 '>
+                   <div className='imgdownline '><img className='logo'  src={logo} height='40px' ></img></div> 
+                     <br></br>
                    <div className=' topsection '>
-                       <div className=' '><img className='logo'  src={logo} height='80px' ></img>
+                       <div className=' '>
                        
-                        <p className='adress'>  To : {fullname}<br></br>{mail} <br></br>   {gst}</p></div>
-                       <div className=''>  <p> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> </p> </div>
-                        
+                        <p className='adress'>  Billed To : {fullname}<br></br> Country: {country} <br></br> Email : {mail}<br></br> Tax id:  {gst}</p></div>
+                       <div className='me-5'>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
                       
                         </div>
-                  
-                 <div className='col-1'></div>
-                 <div className='col-12  ' >
-                  <div className='row '>
-                     <div className='col  top '>Features</div>
+                      <div className='row'>
+                    <div className='col-2'></div>
+                    <div className='col-8  ' >
+                     <div className='row '>
+                     <div className='col  top text-start '>Item</div>
                      <div className='col  top ' >Quantity</div>
-                     <div className='col  top '>Cost</div>
-                  </div>
-                  <div className='row'>
+                     <div className='col  top '>Rate</div>
+                     </div>
+                    <div className='row'>
                        <div className='col firstheading  features text-start '>Plan Cost </div>
                        <div className='col features' >Type:Small</div>
-                       <div className='col features '>$ 700</div>
+                       <div className='col features '>$700</div>
                     </div>
-                  <div className='row'>
+                     <div className='row'>
                      <div className='col firstheading features text-start '>Attendees Volume</div>
                      <div className='col features' >{attend}</div>
                      <div className='col features '>${attendcost}</div>
-                  </div>
-                  <div className='row'>
+                    </div>
+                    <div className='row'>
                      <div className='col firstheading features text-start '>Extra Booth</div>
                      <div className='col features' >{exhibitor}</div>
                      <div className='col features'>${exhibitorcost}</div>
-                  </div>
-                  <div className='row'>
+                    </div>
+                     <div className='row'>
                      <div className='col firstheading features text-start '>Custom Hall Template </div>
                      <div className='col  features' >{customhall}</div>
                      <div className='col features '>${customhallcost}</div>
@@ -1003,16 +1080,44 @@ Free tech support for first event!
                      <div className='col features' >{hour}</div>
                      <div className='col features'>${hourcost}</div>
                   </div>
-                  <div className='row'>
-                      <div className='col  total2'>Total- ${total}<span className='words' >({totalwords.toUpperCase()}  DOLLARS ) </span> </div>
+              
+                  <div className=' d-flex  '>
+                  
+                      <div className='col text-end   totalbottom '>
+                        Total Purchases: ${total}
+                        <br></br>
+                       
+                        <div className='totalbottom'>({totalwords.toUpperCase()}  DOLLARS )</div>
+                         </div>
                      
                       
                      
                   </div>
+                  <div className='col-2'></div>
                   </div>
-                  <p >Great ,You are Eligible for Small Plan !<br></br><div className='row'><pre></pre><span className='lastline col-8'>***Quotation Validity is for 5 days from the time of Quotation generated date Please  get back to us at accounts@bizconnectevents.com for any queries 
+                  </div>
+                  <div><br></br>
+ <div className='text-center ' >Great ,You are Eligible for Small Plan !</div>
+<br></br>
+<div className='row '><span className='lastline col-12'>Notes-Quotation Validity is for 5 days from the time of Quotation generated date Please  get back to us at accounts@bizconnectevents.com for any queries 
 
-</span></div></p>
+</span>
+
+<span>
+<div className='lastline text-center'>Please refer to https://bizconnectevents.com for Terms of Sale,Customer Service,Purchase History </div>
+ 
+ <div className='lastline text-center'>
+ © 2022 BizConect Events Company is registered  in the United States and/or other countries. All rights reserved.
+  
+  
+  If you need assistance or have questions, please contact BizConnect Customer Service.</div>
+ 
+  
+ 
+</span>
+</div>
+
+ </div>
                </div>
  
                

@@ -13,6 +13,15 @@ background: #1E63A4;;
 
 
 }
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+
+#google_translate_element { height: 26px !important; 
+    overflow: hidden !important;
+    margin-left:35px; 
+    margin-top:10px;
+}
 .footer_container{
  margin-left: 25px;
  margin-right: 25px;

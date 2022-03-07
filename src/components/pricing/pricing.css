@@ -130,6 +130,15 @@ body {
   color: #fff !important;
   cursor: pointer;
 }
+/* <div className='row border'>
+                        <span className='col-1 zero '>0</span>
+                        <div className='col-6'></div>
+                        <span className='col-1 '>10000</span>
+                        <div className='col'></div>
+                        <span className='col'> <h6 className=''>Cost: ${attendcost}</h6></span>
+                          </div>
+                          <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link><pre></pre>
+                          */
 .no_of_sing {
  
   text-align: center;

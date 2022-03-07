@@ -1,4 +1,5 @@
 import './calculator_table.css'
+
 function Table(props){
     console.log(props.attend)
     return(<div>
@@ -7,95 +8,95 @@ function Table(props){
 	
 	<div class="table">
 		<div class="table-header">
-			<div class="header__item"><a id="name" class="filter__link" >Features</a></div>
-			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Quantity</a></div>
-			<div class="header__item"><a id="draws" class="filter__link filter__link--number" >Cost</a></div>
+			<div class="header__item"><a id="name" class="filter__link heading" >Features</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number heading" >Quantity</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number heading" >Cost</a></div>
 		
 		</div>
 		<div class="table-content">	
-        <div class="table-row">		
-				<div class="table-data">Plan</div>
-				<div class="table-data">Type:{props.plantype}</div>
-				<div class="table-data">$ {props.plancost}</div>
+          <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Plan</div>
+				<div class="table-data table-border-child">Type:{props.plantype}</div>
+				<div class="table-data table-border-child">$ {props.plancost}</div>
 			
 			</div>
-			<div class="table-row">		
-				<div class="table-data">Attendees Volume</div>
-				<div class="table-data">{props.attend}</div>
-				<div class="table-data">$ {props.attendcost}</div>
+			<div class="table-row table-border">		
+				<div class="table-data table-border-child align">Attendees Volume</div>
+				<div class="table-data table-border-child">{props.attend}</div>
+				<div class="table-data table-border-child">$ {props.attendcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Extra Booth</div>
-				<div class="table-data">{props.exhibitor}</div>
-				<div class="table-data">$ {props.exhibitorcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Extra Booth</div>
+				<div class="table-data table-border-child">{props.exhibitor}</div>
+				<div class="table-data table-border-child">$ {props.exhibitorcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Custom Hall Template</div>
-				<div class="table-data">{props.customhall}</div>
-				<div class="table-data">$ {props.customhallcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Custom Hall Template</div>
+				<div class="table-data table-border-child">{props.customhall}</div>
+				<div class="table-data table-border-child">$ {props.customhallcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Custom Booth Template</div>
-				<div class="table-data">{props.custombooth}</div>
-				<div class="table-data">$ {props.customboothcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Custom Booth Template</div>
+				<div class="table-data table-border-child">{props.custombooth}</div>
+				<div class="table-data table-border-child">$ {props.customboothcost}</div>
 			
 			</div>
             
-            <div class="table-row">		
-				<div class="table-data">White Label</div>
-				<div class="table-data">{props.whitelabel}</div>
-				<div class="table-data">$ {props.whitelabelcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">White Label</div>
+				<div class="table-data table-border-child">{props.whitelabel}</div>
+				<div class="table-data table-border-child">$ {props.whitelabelcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Customlanding Template</div>
-				<div class="table-data">{props.customlanding}</div>
-				<div class="table-data">$ {props.customlandingcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Customlanding Template</div>
+				<div class="table-data table-border-child">{props.customlanding}</div>
+				<div class="table-data table-border-child">$ {props.customlandingcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Branded Lobby Walkthrus</div>
-				<div class="table-data">{props.three}</div>
-				<div class="table-data">$ {props.threecost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Branded Lobby Walkthrus</div>
+				<div class="table-data table-border-child">{props.three}</div>
+				<div class="table-data table-border-child">$ {props.threecost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Customlobby Template</div>
-				<div class="table-data">{props.customlobby}</div>
-				<div class="table-data">$ {props.customlobbycost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Customlobby Template</div>
+				<div class="table-data table-border-child">{props.customlobby}</div>
+				<div class="table-data table-border-child">$ {props.customlobbycost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Auditorium</div>
-				<div class="table-data">{props.auditorium}</div>
-				<div class="table-data">$ {props.auditoriumcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Auditorium</div>
+				<div class="table-data table-border-child">{props.auditorium}</div>
+				<div class="table-data table-border-child">$ {props.auditoriumcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Games</div>
-				<div class="table-data">{props.games}</div>
-				<div class="table-data">$ {props.gamescost}</div>
+            <div class="table-row table-border  ">		
+				<div class="table-data table-border-child  align ">Games</div>
+				<div class="table-data table-border-child ">{props.games}</div>
+				<div class="table-data table-border-child ">$ {props.gamescost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Photo Booth</div>
-				<div class="table-data">{props.booth}</div>
-				<div class="table-data">$ {props.boothcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Photo Booth</div>
+				<div class="table-data table-border-child">{props.booth}</div>
+				<div class="table-data table-border-child">$ {props.boothcost}</div>
 			
 			</div>
-            <div class="table-row">		
-				<div class="table-data">Tech Support</div>
-				<div class="table-data">{props.hour}</div>
-				<div class="table-data">$ {props.hourcost}</div>
+            <div class="table-row table-border">		
+				<div class="table-data table-border-child align">Tech Support</div>
+				<div class="table-data table-border-child">{props.hour}</div>
+				<div class="table-data table-border-child">$ {props.hourcost}</div>
 			
 			</div>
-			<div class="table-row">
-				<div class="table-data"></div>
-				<div class="table-data"></div>
-				<div class="table-data">Total: ${props.total}</div>
+			<div class="table-row table-border">
+				<div class="table-data table-border-child align"></div>
+				<div class="table-data table-border-child"></div>
+				<div class="table-data table-border-child totalcont">Total: ${props.total}</div>
 			
 			</div>
 			

@@ -1,26 +1,35 @@
 .features{
     text-align: center;
-    background-color: #b9ffe5;
-    border-right: 1px solid white;
+    background-color: #b9ffe500;
+    border: 1px dotted rgb(84, 84, 84);
 
-font-size: 11px;
+font-size: 10px;
 }
 
 #qotation{
+    margin-left: 100px;
     display: none;
+    
 }
-
+/*<span className='words ' >({totalwords.toUpperCase()}  DOLLARS )</span>*/
 .total2{
-    font-size: 17px;
+    font-size: 13px;
     color: rgb(0, 60, 255);
     font-weight: 700;
+}
+.totalbottom{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: rgb(0, 60, 255);
+    font-weight: 600;
 }
 
 .head{text-align: center;
     color: black !important;
 }
 .lastline{
-    font-size: 10px;
+    font-size: 9px;
+    color: rgb(46, 46, 46);
 }
 #qotform{
     margin-bottom: 20px;
@@ -37,17 +46,16 @@ font-size: 11px;
 }
 .top{
     text-align: center;
+    border: 1px dotted rgb(84, 84, 84);
   
-    padding: 5px;
-    background-color: #39B587;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    padding: 1px;
+   
     font-size: 13px;
     font-weight: 600;
 }
 .row{
     
-    margin-bottom: 3px;
+    
 }
 .adress{
     margin-left: 10px;
@@ -59,6 +67,13 @@ width: 740px;
 .topsection{
     display: flex !important;
     justify-content: space-between;
+}
+.datedetail{
+    font-size: 13px;
+}
+.imgdownline{
+    padding: 0px;
+    border-bottom: 4px solid black;
 }
 
 .qotationbutton{
@@ -75,7 +90,7 @@ padding: 10px;
 
 }
 .qotationbuttonmini{
-    opacity: 0.5;
+    
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;

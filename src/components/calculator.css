@@ -86,21 +86,35 @@ input{
 border: 1px solid #CACACA !important; 
 box-sizing: border-box !important;
 border-radius: 2px !important;
-padding: 6px;
+padding: 4px;
 text-align: center;
+font-size: 16px;
+font-weight: 300;
+position: relative;
+bottom: 5px;
+}
+.slidercont{
+    margin-left: 60px;
 }
 .form-label{
     font-family: Roboto;
-font-style: normal;
+
 font-weight: 300;
-font-size: 16px;
+font-size: 13px !important;
 }
+/*id='exhibitor'  type='number' className='value inputbox'  min="5" max="100" step="1" value={exhibitor} onChange={exhibitornumber}*/
 #three{
     font-size: 30px !important;
 }
-.whitelabelcheck{
-    margin-top: 35px !important;
+.colon{
+    margin-left: 6%;
 }
+
+.whitelabelcheck{
+    margin-top: 28px !important;
+
+}
+
 .total{  
     text-align: center;
   
@@ -113,9 +127,13 @@ font-size: 58px;
 color: black;
     
  }
+ .optioncheck{
+     margin-left: 11px;
+ }
  #message{
+     margin-top: 50px;
     font-size: 32px;
-    font-weight: 300 !important;
+    font-weight: 500 !important;
  }
  .totalcontainer{
      text-align: center;
@@ -128,22 +146,16 @@ color: black;
     font-family: Roboto;
 font-style: normal;
 font-weight: 500 !important;
-font-size: 33px;
+font-size: 24px;
 text-align: start;
-}
-h3{
-    text-align: start;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 33px;
 color: rgb(30, 30, 30);
-border-bottom: 4px solid #C4C4C4;;
+border-bottom: 3px solid #C4C4C4;;
 }
-h5{
-    font-family: Roboto;
-font-style: normal;
-font-weight: 600 !important;
+
+.subheading{
+  
+
+font-weight: 500 !important;
 font-size: 17px;
 }
 .form-range{
@@ -250,8 +262,12 @@ padding-right: 25px !important;
 
 
 .calimage{
-   width: 130%;
-   height: 600px;
+   width: 120%;
+   height: 410px;
+}
+.num{
+    color:#AAAAAA;
+    font-size: 15px;
 }
 .calculator_heading{
     text-align: center;
@@ -269,10 +285,12 @@ body{
         width: 300px;
         height: 300px;
     }
-   
+   .slidercont{
+       margin-left: 40px;
+   }
 }
 
-
+/*<Link id='custom' to='/calculator/custom' className=' submit_plan_button btn '>Submit</Link>*/
 /* <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>*/
 /* <Link to='/calculator' className='back'><i class="bi bi-arrow-left-square"></i></Link>*/
 /* <div className="  row step ">   <pre></pre>
