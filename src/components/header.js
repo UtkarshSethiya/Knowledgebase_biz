@@ -10,7 +10,7 @@ return(<div className=' '>
 
   <div class="navbar  ">
     <div className='topleft'>
-   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="90%" width="90%"></img>   </a></div>
     <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
     
     </div>

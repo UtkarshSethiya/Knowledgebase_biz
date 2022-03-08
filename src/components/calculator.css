@@ -109,7 +109,9 @@ font-size: 13px !important;
 .colon{
     margin-left: 6%;
 }
-
+.firstcolon{
+    margin-left: 5%; 
+}
 .whitelabelcheck{
     margin-top: 28px !important;
 
@@ -155,7 +157,7 @@ border-bottom: 3px solid #C4C4C4;;
 .subheading{
   
 
-font-weight: 500 !important;
+font-weight: 400 !important;
 font-size: 17px;
 }
 .form-range{
@@ -262,8 +264,9 @@ padding-right: 25px !important;
 
 
 .calimage{
-   width: 120%;
-   height: 410px;
+    margin-left: 10px;
+   width: 140%;
+   height: 480px;
 }
 .num{
     color:#AAAAAA;
@@ -275,7 +278,8 @@ font-family: Roboto !important;
 color: #1E63A4;
 font-weight: 600 !important;
 font-size: 35px;
-padding: 6px;
+padding-top: 7px;
+
 }
 body{
     overflow-x: hidden;

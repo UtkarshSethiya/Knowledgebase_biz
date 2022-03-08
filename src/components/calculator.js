@@ -92,7 +92,7 @@ return(
            
             </div>
            
-            <pre></pre> <pre></pre> <pre></pre>
+            <pre></pre> 
             <div className='row'>
             <div className="col-md-1 "></div>
             
@@ -112,13 +112,13 @@ return(
            
           
 
-                    <div className='col-md-7  '  > 
+                    <div className='col-md-6  '  > 
                     <div className='row'>
-                      
-                    <h3 className='fheading'>Step1 : Customize Your Pricing    <pre></pre></h3>
-                 
+                      <div className='col-12'>
+                    <h3 className='fheading '>Step1 : Customize Your Pricing    <pre></pre></h3>
+                    </div>
            <div className='col-md-1'></div>
-           <div className='col '>
+           <div className='col firstcolon'>
            <h5 className='subheading ' >Number of Events  <Tippy className='tippy' content="Enter the number of events you want to host!"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
                    
                     <label for="customRange1" className="form-label  ">Select the number of Events</label>
@@ -150,7 +150,7 @@ return(
             <h5 className='subheading'>Date <Tippy className='tippy' content="Select the events date of commencement"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy> </h5>
             <div className='col-12 '>
 <div className='row'> 
-<div className='col-6'>
+<div className='col-6 '>
           <label className='form-label '>Define Your First Event Date</label>
           </div>
           <div className='col-1'></div>
@@ -167,22 +167,22 @@ return(
                 <h3 className='fheading'>Step 2 : Choose Your Plan  <pre></pre> </h3>
                 <div className='row '>
                   <div className='col-md-1'></div>
-                  <div className='col'>
+                  <div className='col firstcolon'>
                 <h5 className='subheading'>Select no of Attendees to get your plan <Tippy className='tippy' content="Choose the number of attendees for the event !"><button className='poper'><i class="bi bi-info-circle-fill"></i></button></Tippy></h5>
                 <div className='row  ' >
-                 <div className="form-check col-md-3 optioncheck ">
+                 <div className="form-check col-md optioncheck ">
   <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={twohundred} ></input>
   <label className="form-check-label attendenumber" for="flexRadioDefault1">
     200 to 500 
   </label>
 </div>
-<div class="form-check col-md-3">
+<div class="form-check col-md">
   <input className="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault2" onClick={fivehundred} ></input>
   <label className="form-check-label attendenumber" for="flexRadioDefault2">
     500 to 1000 
   </label>
 </div>
-<div class="form-check col-md-3">
+<div class="form-check col-md">
   <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onClick={thousand} ></input>
   <label className="form-check-label attendenumber" for="flexRadioDefault2">
   1000+ 

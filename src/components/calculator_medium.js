@@ -993,7 +993,7 @@ Free tech support for first event!
                        <div className=' '>
                        
                         <p className='adress'>  Billed To : {fullname}<br></br> Country: {country} <br></br> Email : {mail}<br></br> Tax id:  {gst}</p></div>
-                       <div className='me-5'>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Medium</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
+                       <div className=''>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Medium</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
                       
                         </div>
                       <div className='row'>

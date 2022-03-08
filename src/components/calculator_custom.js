@@ -984,7 +984,7 @@ Free tech support for first event!
                        <div className=' '>
                        
                         <p className='adress'>  Billed To : {fullname}<br></br> Country: {country} <br></br> Email : {mail}<br></br> Tax id:  {gst}</p></div>
-                       <div className='me-5'>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Custom</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
+                       <div className=''>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Custom</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
                       
                         </div>
                       <div className='row'>
@@ -1079,7 +1079,7 @@ Free tech support for first event!
                   </div>
                   </div>
                   <div><br></br>
- <div className='text-center ' >Great ,You are Eligible for Custom Plan ,Talk with Us !</div>
+ <div className='text-center ' >Great ,You are Eligible for Custom Plan ,Talk with Us !</div><pre></pre>
 
 <div className='row '><span className='lastline col-12'>Notes-Quotation Validity is for 5 days from the time of Quotation generated date Please  get back to us at accounts@bizconnectevents.com for any queries 
 

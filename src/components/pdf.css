@@ -8,8 +8,8 @@ font-size: 10px;
 
 #qotation{
     margin-left: 100px;
-    display: none;
     
+    display: none;
 }
 /*<span className='words ' >({totalwords.toUpperCase()}  DOLLARS )</span>*/
 .total2{
@@ -53,12 +53,9 @@ font-size: 10px;
     font-size: 13px;
     font-weight: 600;
 }
-.row{
-    
-    
-}
+
 .adress{
-    margin-left: 10px;
+
     font-size: 12px;
 }
 #qotation{

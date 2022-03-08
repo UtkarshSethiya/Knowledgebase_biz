@@ -9,8 +9,8 @@ function Calheader(){
 
 return(<div>
    <div class="navbar  ">
-    <div className='topleft ms-3'>
-   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="65px" width="110px"></img>   </a></div>
+    <div className='topleft '>
+   <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="60px" width="110px"></img>   </a></div>
     
     
     </div>
