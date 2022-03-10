@@ -996,86 +996,91 @@ Free tech support for first event!
                  
               
                 <div id='qotation' className='  invoice2 '>
-                   <div className='imgdownline '><img className='logo'  src={logo} height='40px' ></img></div> 
+                                    
+                <div className='row '>
+                    
+                    <div className='col-md'></div>
+                    <div className='col-md-11  ' >
+
+                    <div className='imgdownline row '><div className='col-12'><img className='logo'  src={logo} height='40px' ></img></div></div> 
                      <br></br>
-                   <div className=' topsection '>
+                   <div className=' topsection col-12 '>
                        <div className=' '>
                        
                         <p className='adress'>  Billed To : {fullname}<br></br> Country: {country} <br></br> Email : {mail}<br></br> Tax id:  {gst}</p></div>
-                       <div className=''>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> <br></br>Order Total:${total}<br></br>Recipt : #123456 </p>  </div>
+                       <div className=''>  <p className='adress'> Date: {today} <br></br>   Plan : <span className='total2'>Small</span> <br></br>Order Total:${total}<br></br>Receipt : #123456 </p>  </div>
                       
                         </div>
-                      <div className='row'>
-                    <div className='col-2'></div>
-                    <div className='col-8  ' >
-                     <div className='row '>
-                     <div className='col  top text-start '>Item</div>
+
+
+                     <div className='row tophead '>
+                     <div className='col   top '><span className='itemmargin'>Item</span></div>
                      <div className='col  top ' >Quantity</div>
                      <div className='col  top '>Rate</div>
                      </div>
-                    <div className='row'>
+                    <div className='row '>
                        <div className='col firstheading  features text-start '>Plan Cost </div>
-                       <div className='col features' >Type:Small</div>
+                       <div className='col features' >Type : Small</div>
                        <div className='col features '>$700</div>
                     </div>
-                     <div className='row'>
-                     <div className='col firstheading features text-start '>Attendees Volume</div>
+                     <div className='row  alternate'>
+                     <div className='col firstheading  features text-start '>Attendees Volume</div>
                      <div className='col features' >{attend}</div>
                      <div className='col features '>${attendcost}</div>
                     </div>
-                    <div className='row'>
+                    <div className='row '>
                      <div className='col firstheading features text-start '>Extra Booth</div>
                      <div className='col features' >{exhibitor}</div>
                      <div className='col features'>${exhibitorcost}</div>
                     </div>
-                     <div className='row'>
+                     <div className='row  alternate'>
                      <div className='col firstheading features text-start '>Custom Hall Template </div>
                      <div className='col  features' >{customhall}</div>
                      <div className='col features '>${customhallcost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row '>
                      <div className='col firstheading features text-start '>Custom Booth Template </div>
                      <div className='col  features' >{custombooth}</div>
                      <div className='col  features'>${customboothcost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row  alternate'>
                      <div className='col firstheading features text-start '>White Label </div>
                      <div className='col features' >{whitelabel}</div>
                      <div className='col features '>${whitelabelcost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row '>
                      <div className='col firstheading features text-start '> Custom Landing Template </div>
                      <div className='col features' >{customlanding}</div>
                      <div className='col features '>${customlandingcost}</div>
                   </div>
                 
-                  <div className='row'>
+                  <div className='row alternate '>
                      <div className='col firstheading features text-start '>   Branded Lobby Walkthrough </div>
                      <div className='col features' >{three}</div>
                      <div className='col features '>${threecost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row '>
                      <div className='col firstheading features text-start '>  Custom Lobby Template </div>
                      <div className='col features' >{customlobby}</div>
                      <div className='col features '>${customlobbycost}</div>
                   </div>
 
-                  <div className='row'>
+                  <div className='row alternate'>
                      <div className='col firstheading features text-start '>  Auditorium  </div>
                      <div className='col features' >{auditorium}</div>
                      <div className='col  features'>${auditoriumcost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row '>
                      <div className='col firstheading features text-start '>  Games  with Leaderboard  </div>
                      <div className='col features' >{games}</div>
                      <div className='col features'>${gamescost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row  alternate'>
                      <div className='col firstheading features text-start '> Photo Booth   </div>
                      <div className='col features' >{booth}</div>
                      <div className='col features'>${boothcost}</div>
                   </div>
-                  <div className='row'>
+                  <div className='row '>
                      <div className='col firstheading features text-start '> Onboarding Executive Support   </div>
                      <div className='col features' >{hour}</div>
                      <div className='col features'>${hourcost}</div>
@@ -1093,12 +1098,9 @@ Free tech support for first event!
                       
                      
                   </div>
-                  <div className='col-2'></div>
-                  </div>
-                  </div>
-                  <div><br></br>
- <div className='text-center ' >Great ,You are Eligible for Small Plan !</div>
-<br></br>
+                 
+                  <div className='text-center ' >Great ,You are Eligible for Small Plan !</div><pre></pre>
+
 <div className='row '><span className='lastline col-12'>Notes-Quotation Validity is for 5 days from the time of Quotation generated date Please  get back to us at accounts@bizconnectevents.com for any queries 
 
 </span>
@@ -1116,6 +1118,11 @@ Free tech support for first event!
  
 </span>
 </div>
+                  </div>
+                  <div className='col-md'></div>
+                  </div>
+                  <div><br></br>
+
 
  </div>
                </div>

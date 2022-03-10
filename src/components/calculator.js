@@ -114,7 +114,7 @@ return(
 
                     <div className='col-md-6  '  > 
                     <div className='row'>
-                      <div className='col-12'>
+                      <div className='col-12  '>
                     <h3 className='fheading '>Step1 : Customize Your Pricing    <pre></pre></h3>
                     </div>
            <div className='col-md-1'></div>
