@@ -11,7 +11,7 @@ return(
 <div class="navbar  ">
     <div className='topleft'>
    <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="100%" width="90%"></img>   </a></div>
-    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
+    <div className='home' ><Link  className='home '  to='/'> Home</Link></div>
     
     </div>
     
@@ -116,12 +116,12 @@ return(
         </div>
         <div className="form-group">
          <label className='fonts' for="description">Description</label>
-         <textarea className="form-control" rows="11" id="description" rows="3"></textarea>
+         <textarea className="form-control" rows="11" id="description"></textarea>
        </div>
         <div className="form-group d-flex justify-content-between align-items-center ">
           <div className="form-check">
             <input className="form-check-input" type="checkbox" required id="gridCheck" />
-            <label className='fonts' className="form-check-label" for="gridCheck">
+            <label className='fonts form-check-label'  for="gridCheck">
              I Agree to terms and conditions
             </label>
           </div>

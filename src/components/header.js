@@ -11,16 +11,16 @@ return(<div className=' '>
   <div class="navbar  ">
     <div className='topleft'>
    <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="90%" width="90%"></img>   </a></div>
-    <div className='home' ><Link  className='home '  to='/home'> Home</Link></div>
+    <div className='home' ><Link to='/home'  className='home '  > Home</Link></div>
     
     </div>
     
   
 
     <div className=' '>
-    <Link className="topbuttons submit_request btn" to="/request"><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
-    <Link className="topbuttons btn" to="/pricing/pricing"><i class="bi topicons bi-cash-coin"></i> Pricing</Link>
-    <Link  className="topbuttons btn " to="/calculator"><i class="bi topicons bi-calculator-fill"></i> Calculator</Link>
+    <Link to="/request" className="topbuttons submit_request btn" ><i class="bi topicons bi-cash-coin"></i> Submit a Request</Link>
+    <Link  to="/pricing/pricing" className="topbuttons btn"><i class="bi topicons bi-cash-coin"></i> Pricing</Link>
+    <Link to="/calculator"  className="topbuttons btn " ><i class="bi topicons bi-calculator-fill"></i> Calculator</Link>
  
     <button className="btn topbuttons subscribe btn1 " type="submit">Subscribe</button>
   
@@ -37,7 +37,7 @@ return(<div className=' '>
     <h1 id='heading'>BizConnect Knowledgebase</h1>
     <h2 id='help'>How can we help you ?</h2>
     <pre></pre>
-   <input class="fontAwesome" placeholder=' &#xF002;  Search Your Queries'>
+   <input class="fontAwesome searchit" placeholder=' &#xF002;  Search Your Queries'>
 
 </input>
 </div>

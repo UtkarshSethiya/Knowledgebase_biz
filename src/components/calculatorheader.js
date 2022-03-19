@@ -12,7 +12,7 @@ return(<div>
     <div className='topleft '>
    <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="60px" width="110px"></img>   </a></div>
     
-    
+   <div className='home' ><Link  className='home '  to='/'> Home</Link></div>
     </div>
     
   

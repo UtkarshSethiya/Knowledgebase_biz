@@ -26,8 +26,8 @@ function Pricing(){
       <div class="navbar  ">
     <div className='topleft ms-3'>
    <div className='logo-cont'><a href="https://bizconnectevents.com/" ><img className='logo-image '  src={logo} height="65px" width="110px"></img>   </a></div>
-    
-    
+   <div className='home' ><Link  className='home '  to='/'> Home</Link></div>
+
     </div>
     
   
