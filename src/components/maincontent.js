@@ -29,24 +29,25 @@ return(
     </div>
     <pre></pre>  <pre></pre>
 <pre></pre><pre></pre>
+
 <pre></pre><pre></pre>
 <div className='row  '>
 
-<div className='col-md cont_container'>
-<div><img src={image3} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/dashboard' className='col-md cont_container' style={{ textDecoration: 'none' }}>
+<div><img src={image3} height='50px' width='50px'></img> <span className='contheading'>Dashboard</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 <div className='col-1'></div>
-<div className='col-md cont_container'>
-<div><img src={image4} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/EventRegistration' className='col-md cont_container' style={{ textDecoration: 'none' }}>
+<div><img src={image4} height='50px' width='50px'></img> <span className='contheading'>Event Registration</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
 
 <div className='col-1'></div>

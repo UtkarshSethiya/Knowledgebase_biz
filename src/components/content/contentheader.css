@@ -1,0 +1,173 @@
+
+
+.fontAwesomecontent{ font-family: 'Helvetica', FontAwesome, sans-serif; 
+    border: 2px solid rgba(255, 172, 12, 1);
+    width: fit-content;
+    height: 40px;
+  }
+  .topleft{
+    display: flex;
+
+  }
+  .logo-cont{
+    margin-left: 40px;
+    padding: 2px;
+  }
+  
+  @font-face {
+    font-family: heading2;
+    src: url(../fonts/Roboto-Regular.ttf);
+  }
+  .main{
+     
+    background: #F1F1F1;
+  
+  }
+  
+  #headingcontent{
+    color: #1E63A4 !important ;
+  text-align: center;
+    font-family: heading2;
+    
+    font-weight: 1000;
+  }
+  #help{ font-family: heading;
+    font-weight: 400 !important;
+    color: black !important;
+  }
+  .topbuttons{
+    color: white !important;
+    background: #1E63A4 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  font-weight: 700 !important;
+  margin-right: 5px;
+  }
+  
+  
+  .home{
+    color: rgb(10, 10, 10) ;
+    text-decoration: none;
+   margin-top: 10%;
+   margin-left: 15px;
+   font-size: 20px;
+   position: relative;
+   bottom: 5px;
+  }
+  .home:hover{
+    color: rgb(4, 104, 198) ;
+  }
+  input{
+    padding: 10px;
+    border: 1px solid rgb(70, 130, 194);
+   width: 100%;
+    font-size: 20px;
+   border-radius: 25px;
+  outline:  rgb(70, 130, 194);
+  
+  }
+  
+  .navbar{
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    
+  }
+  .contentnavbar{
+    background: #F1F1F1;
+  }
+  .bi-cash-coin{
+    font-size: 16px !important;
+  }
+  .bi-calculator-fill{
+    font-size: 16px !important; 
+  }
+  .searchit{
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+  }
+  input.searchit {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+  .btn1{
+    background: #FF910F !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 6px !important;
+    padding: 8px;
+    font-weight: 700 !important;
+    border:none;
+    font-size: 16px !important;
+  }
+  
+  .searchbox{
+    text-align: center;
+  
+  }
+  
+  .stepcontent{
+    color: #FF910F;
+    font-weight: 400; 
+    text-align: center !important;
+  }
+  
+  h2{
+    font-weight: 600;
+    color: rgb(255, 255, 255) !important;
+  }
+  .faq{
+    text-align: center;
+    color: white !important;
+   
+  }
+  .expolretopicsrow{
+    border-bottom: 2px solid #39B587;
+  }
+  
+  .subscribe{
+    margin-right: 20px !important;
+  }
+  @media  screen and  ( max-width:810px) {
+  
+  .topbuttons{
+    padding: 2px !important;
+    font-size: 11px !important;
+  margin-right: 1px;
+  
+  }
+  .topicons{
+    font-size: 10px !important;
+  }
+  .home{
+    font-size: 12px !important;
+    font-weight: 600;
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+  .submit_request{
+    display: none !important;
+  }
+  .logo-image{
+   height: 50px;
+   width: 80px;
+   
+  
+  }
+  .fontAwesomecontent{
+      width: 100px;
+  }
+  .home{
+      position: relative;
+      top: 3%;
+  }
+  .searchit{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .logo-cont{
+    padding: 0px;
+    margin-left: 0px;
+  }
+  
+    
+  }

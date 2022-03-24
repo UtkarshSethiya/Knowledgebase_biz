@@ -33,7 +33,7 @@ return(<div className=' '>
 <div className='col-3'></div>
   <div className='col-md-6'>
   <div className='searchbox'>
-    <pre></pre><pre></pre>
+    <pre></pre>
     <h1 id='heading'>BizConnect Knowledgebase</h1>
     <h2 id='help'>How can we help you ?</h2>
     <pre></pre>

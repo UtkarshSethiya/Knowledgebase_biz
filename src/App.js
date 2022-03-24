@@ -11,7 +11,7 @@ import Small from './components/calculator_small';
 import Custom from './components/calculator_custom';
 import ScrollToTop from './components/scroll';
 import Pricing from './components/pricing/pricing';
-
+import Event from './components/content/Event';
 
 
 import {
@@ -20,6 +20,7 @@ import {
   Route
 } from "react-router-dom";
 import Homepage from './homepage';
+import Dashboard from './components/content/Dashboard';
 
 
 
@@ -44,7 +45,8 @@ function App() {
      <Route path="/calculator/small"  element={<Small/>}  />
      <Route path="/calculator/custom"  element={<Custom/>}  />
      <Route path="/pricing/pricing"  element={<Pricing/>}  />
-    
+    <Route path='/help/dashboard'   element={<Dashboard/>} />
+    <Route path='/help/EventRegistration'   element={<Event/>} />
     
     </Routes>
 

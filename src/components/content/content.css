@@ -1,0 +1,44 @@
+.categories{
+
+    font-weight: 500;
+    font-size: 19px;
+    color: rgb(20, 20, 20);
+}
+.contentcategories{
+    margin-left: 20px;
+    color: rgb(54, 54, 54);
+    padding: 4px;
+ 
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.contentcategories:hover{
+    border-left: 3px solid #FF910F ;
+    color: black;
+    font-weight: 700;
+}
+.contentcategories:active{
+    border-left: 3px solid #FF910F ;
+    color: black;
+    font-weight: 700;
+}
+.descripton{
+    border: 0.5px solid rgb(221, 221, 221);
+    border-radius: 20px;
+}
+.lines{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(42, 42, 42);
+}
+.categoriescont{
+    border: 0.5px solid rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+@media  screen and  ( max-width:810px) {
+    #index{
+        position: relative;
+    }
+}
