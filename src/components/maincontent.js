@@ -7,7 +7,10 @@ import image5 from './images/image 5.png';
 import image6 from './images/image 6.png';
 import image7 from './images/image 7.png';
 import image8 from './images/image 8.png';
-import contact from './images/contact.png'
+import contact from './images/contact.png';
+import dashboardicon from './images/dashboardicon.png';
+import eventicon from './images/eventicon.png';
+import Exhibitionicon from './images/Exhibitionicon.png';
 
 
 function Content(){
@@ -15,7 +18,7 @@ function Content(){
 return(
 
 
-<div className='container-sm  ' >
+<div className=' contmax' >
     <div className='row expolretopicsrow'>
        
       
@@ -33,62 +36,101 @@ return(
 <pre></pre><pre></pre>
 <div className='row  '>
 
-<Link to='/help/dashboard' className='col-md cont_container' style={{ textDecoration: 'none' }}>
-<div><img src={image3} height='50px' width='50px'></img> <span className='contheading'>Dashboard</span> </div>
-<pre></pre>
-<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
-
-</p>
-</Link>
-<div className='col-1'></div>
-<Link to='/help/EventRegistration' className='col-md cont_container' style={{ textDecoration: 'none' }}>
-<div><img src={image4} height='50px' width='50px'></img> <span className='contheading'>Event Registration</span> </div>
-<pre></pre>
-<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
-
-</p>
-</Link>
-
-
-<div className='col-1'></div>
-
-<div className='col-md cont_container'>
-<div><img src={image5} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/dashboard' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+  <div>
+<div><img src={dashboardicon} height='40px' width='40px'></img> <span className='contheading'>Dashboard</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
 </div>
+</Link>
+
+<Link to='/help/EventRegistration' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+  <div>
+<div><img src={eventicon} height='40px' width='40px'></img> <span className='contheading'>Event Registration</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</div>
+</Link>
+
+
+
+
+<Link to='/help/ExhibitionhallManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+  <div>
+<div><img src={Exhibitionicon} height='40px' width='40px'></img> <span className='contheading'>Exhibition Hall Management</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+
+</p>
+</div>
+</Link>
 
 <div className='content_space'><pre></pre></div>
 
 
-<div className='col-md cont_container'>
-<div><img src={image6} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
-<pre></pre>
-<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
-
-</p>
-</div>
-<div className='col-1'></div>
-<div className='col-md cont_container'>
-<div><img src={image7} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
+<div className='col-md cont_container m-2'>
+<div><img src={image6} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
 </div>
 
-
-<div className='col-1'></div>
-
-<div className='col-md cont_container'>
-<div><img src={image8} height='50px' width='50px'></img> <span className='contheading'>You Heading Here</span> </div>
+<div className='col-md cont_container m-2'>
+<div><img src={image7} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
 </div>
+
+
+
+
+<div className='col-md cont_container m-2'>
+<div><img src={image8} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</div>
+
+
+<div className='content_space'><pre></pre></div>
+
+
+<div className='col-md cont_container m-2'>
+<div><img src={image6} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</div>
+
+<div className='col-md cont_container m-2'>
+<div><img src={image7} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</div>
+
+
+
+
+<div className='col-md cont_container m-2'>
+<div><img src={image8} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</div>
+
 
 </div>
 

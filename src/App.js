@@ -21,6 +21,7 @@ import {
 } from "react-router-dom";
 import Homepage from './homepage';
 import Dashboard from './components/content/Dashboard';
+import Exhibition from './components/content/Exhibition';
 
 
 
@@ -47,6 +48,7 @@ function App() {
      <Route path="/pricing/pricing"  element={<Pricing/>}  />
     <Route path='/help/dashboard'   element={<Dashboard/>} />
     <Route path='/help/EventRegistration'   element={<Event/>} />
+    <Route path='/help/ExhibitionhallManagement'   element={<Exhibition/>} />
     
     </Routes>
 
