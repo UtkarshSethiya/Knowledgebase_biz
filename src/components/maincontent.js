@@ -7,7 +7,12 @@ import image5 from './images/image 5.png';
 import image6 from './images/image 6.png';
 import image7 from './images/image 7.png';
 import image8 from './images/image 8.png';
+import landing from './images/landing.png';
+import network from './images/network.png';
 import contact from './images/contact.png';
+import speaker from './images/speaker.png';
+import lobby from './images/lobby.png';
+import booth from './images/booth.png';
 import dashboardicon from './images/dashboardicon.png';
 import eventicon from './images/eventicon.png';
 import Exhibitionicon from './images/Exhibitionicon.png';
@@ -22,7 +27,7 @@ return(
     <div className='row expolretopicsrow'>
        
       
-        <div className='col-md-3 book '> <img  src={book}></img></div>
+        <div className='col-md-3 book '> <img className='bookimage' src={book}></img></div>
        <div className='col-md-3 explore '>  <p className='topics'>Explore Topics</p></div>
        <div className='col-md-5'><p className='descp'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.</p></div>
        
@@ -38,7 +43,8 @@ return(
 
 <Link to='/help/dashboard' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
   <div>
-<div><img src={dashboardicon} height='40px' width='40px'></img> <span className='contheading'>Dashboard</span> </div>
+ 
+<div><img src={'https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-dashboard-100-most-used-icons-flaticons-flat-flat-icons-2.png'} height='40px' width='40px'></img> <span className='contheading'>Dashboard</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
@@ -48,7 +54,7 @@ return(
 
 <Link to='/help/EventRegistration' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
   <div>
-<div><img src={eventicon} height='40px' width='40px'></img> <span className='contheading'>Event Registration</span> </div>
+<div><img src={'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-vip-event-event-management-flaticons-lineal-color-flat-icons-2.png'} height='40px' width='40px'></img> <span className='contheading'>Event Registration</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
@@ -61,7 +67,7 @@ return(
 
 <Link to='/help/ExhibitionhallManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
   <div>
-<div><img src={Exhibitionicon} height='40px' width='40px'></img> <span className='contheading'>Exhibition Hall Management</span> </div>
+<div><img src={'https://img.icons8.com/fluency/48/000000/exhibition.png'} height='40px' width='40px'></img> <span className='contheading'>Exhibition Hall Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
@@ -73,52 +79,53 @@ return(
 <div className='content_space'><pre></pre></div>
 
 
-<div className='col-md cont_container m-2'>
-<div><img src={image6} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/LandingPageManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={landing} height='40px' width='40px'></img> <span className='contheading'>Landing Page Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
-<div className='col-md cont_container m-2'>
-<div><img src={image7} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/NetworkManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={network} height='40px' width='40px'></img> <span className='contheading'>Network Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
 
 
 
-<div className='col-md cont_container m-2'>
-<div><img src={image8} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link  to='/help/SpeakerRoomManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={speaker} height='40px' width='40px'></img> <span className='contheading'>Speaker Room Management
+</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
 
 <div className='content_space'><pre></pre></div>
 
 
-<div className='col-md cont_container m-2'>
-<div><img src={image6} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/LobbyManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={lobby} height='40px' width='40px'></img> <span className='contheading'>Lobby Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
-<div className='col-md cont_container m-2'>
-<div><img src={image7} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/BoothManagement' className='col-md cont_container m-2'  style={{ textDecoration: 'none' }}>
+<div><img src={booth} height='40px' width='40px'></img> <span className='contheading'>Booth Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
 
 
 

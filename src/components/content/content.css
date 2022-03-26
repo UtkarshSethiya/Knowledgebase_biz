@@ -30,15 +30,28 @@
 .lines{
     font-size: 15px;
     font-weight: 500;
-    color: rgb(42, 42, 42);
+    color: rgb(84, 84, 84);
 }
 .categoriescont{
     border: 0.5px solid rgb(221, 221, 221);
     border-radius: 20px;
 }
+#bold{
+    font-weight: 600;
+}
+.tableheader{
+    background-color: rgb(64, 64, 64) !important;
+    color: white;
+}
+.tablecontent{
+    background-color: rgb(255, 250, 249) !important;
+    color: rgb(5, 5, 5);
+}
+
 
 @media  screen and  ( max-width:810px) {
     #index{
         position: relative;
     }
+  
 }

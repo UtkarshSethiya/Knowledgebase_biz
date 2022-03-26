@@ -12,7 +12,7 @@ import Custom from './components/calculator_custom';
 import ScrollToTop from './components/scroll';
 import Pricing from './components/pricing/pricing';
 import Event from './components/content/Event';
-
+import Network from './components/content/Network';
 
 import {
   BrowserRouter,
@@ -22,6 +22,10 @@ import {
 import Homepage from './homepage';
 import Dashboard from './components/content/Dashboard';
 import Exhibition from './components/content/Exhibition';
+import Landing from './components/content/Landing';
+import Speaker from './components/content/Speaker';
+import Lobby from './components/content/Lobby';
+import Booth from './components/content/Booth';
 
 
 
@@ -49,6 +53,11 @@ function App() {
     <Route path='/help/dashboard'   element={<Dashboard/>} />
     <Route path='/help/EventRegistration'   element={<Event/>} />
     <Route path='/help/ExhibitionhallManagement'   element={<Exhibition/>} />
+    <Route path='/help/LandingPageManagement'   element={<Landing/>} />
+    <Route path='/help/NetworkManagement'   element={<Network/>} />
+    <Route path='/help/SpeakerRoomManagement'   element={<Speaker/>} />
+    <Route path='/help/BoothManagement'   element={<Booth/>} />
+    <Route path='/help/LobbyManagement'   element={<Lobby/>} />
     
     </Routes>
 
