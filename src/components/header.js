@@ -42,7 +42,7 @@ return(<div className=' '>
 </input>
 </div>
 <pre></pre>
-<div className='faq' ><a className='faq' href='#'>FAQ's</a></div>
+
 
 <pre></pre><br></br>
   </div>
