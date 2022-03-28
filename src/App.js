@@ -13,7 +13,8 @@ import ScrollToTop from './components/scroll';
 import Pricing from './components/pricing/pricing';
 import Event from './components/content/Event';
 import Network from './components/content/Network';
-
+import Calc from './components/content/Calculator';
+import Pricingcontent from './components/content/Pricing';
 import {
   BrowserRouter,
   Routes,
@@ -26,6 +27,8 @@ import Landing from './components/content/Landing';
 import Speaker from './components/content/Speaker';
 import Lobby from './components/content/Lobby';
 import Booth from './components/content/Booth';
+import User from './components/content/User';
+import Template from './components/content/Template';
 
 
 
@@ -58,7 +61,10 @@ function App() {
     <Route path='/help/SpeakerRoomManagement'   element={<Speaker/>} />
     <Route path='/help/BoothManagement'   element={<Booth/>} />
     <Route path='/help/LobbyManagement'   element={<Lobby/>} />
-    
+    <Route path='/help/UserManagement'   element={<User/>} />
+    <Route path='/help/TemplateManagement'   element={<Template/>} />
+    <Route path='/help/EstimateEventCost'   element={<Calc/>} />
+    <Route path='/help/Pricing'   element={<Pricingcontent/>} />
     </Routes>
 
 

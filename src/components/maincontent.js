@@ -13,6 +13,11 @@ import contact from './images/contact.png';
 import speaker from './images/speaker.png';
 import lobby from './images/lobby.png';
 import booth from './images/booth.png';
+import user from './images/user.png';
+import template from './images/template.png';
+import cal from './images/Calculator.png';
+import price from './images/Pricing.png';
+
 import dashboardicon from './images/dashboardicon.png';
 import eventicon from './images/eventicon.png';
 import Exhibitionicon from './images/Exhibitionicon.png';
@@ -130,13 +135,42 @@ return(
 
 
 
-<div className='col-md cont_container m-2'>
-<div><img src={image8} height='40px' width='40px'></img> <span className='contheading'>You Heading Here</span> </div>
+<Link to='/help/UserManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={user} height='40px' width='40px'></img> <span className='contheading'>User Management</span> </div>
 <pre></pre>
 <p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
 
 </p>
-</div>
+</Link>
+<div className='content_space'><pre></pre></div>
+
+
+<Link to='/help/TemplateManagement' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={template} height='40px' width='40px'></img> <span className='contheading'>Template Management</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</Link>
+
+<Link to='/help/EstimateEventCost' className='col-md cont_container m-2'  style={{ textDecoration: 'none' }}>
+<div><img src={cal} height='40px' width='40px'></img> <span className='contheading'>Calculator</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</Link>
+
+
+
+
+<Link to='/help/Pricing' className='col-md cont_container m-2' style={{ textDecoration: 'none' }}>
+<div><img src={price} height='40px' width='40px'></img> <span className='contheading'>Pricing</span> </div>
+<pre></pre>
+<p className='contdetails'>We did our best to cover all topics related to our product. Each section have detailed info of topic in each category.
+
+</p>
+</Link>
 
 
 </div>

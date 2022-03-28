@@ -15,7 +15,7 @@
   .cont_container:hover{
     transform: scale(1.03);
     transition-duration: .5s;
-    box-shadow: rgba(99, 99, 99, 0.418) 0px 2px 8px 1px;
+    box-shadow: rgba(204, 204, 204, 0.253) 0px 2px 8px 1px;
     border: none;
   }
   @font-face {
@@ -78,10 +78,10 @@ top: 10px;
   .contheading{
     font-family: heading;
     font-style: normal;
-font-weight: 700;
+font-weight: 500;
 font-size: 20px;
 text-decoration: none !important;
-color: black;
+color: rgb(57, 57, 57);
   }
   .contdetails{
     font-size: 13px;
